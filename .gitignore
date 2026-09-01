@@ -19,3 +19,4 @@ dist/
 
 # Claude Code yerel ayarlari
 .claude/settings.local.json
+.neon
