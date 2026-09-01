@@ -10,14 +10,10 @@
   node_bundler = "esbuild"
 
 # ---------- API yönlendirmeleri ----------
+# /api/<ad> → netlify/functions/<ad>.js — yeni uçlar için ek kural gerekmez.
 [[redirects]]
-  from = "/api/stats"
-  to = "/.netlify/functions/stats"
-  status = 200
-
-[[redirects]]
-  from = "/api/videos"
-  to = "/.netlify/functions/videos"
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
 
 # Eski tek sayfalık site için kısayollar

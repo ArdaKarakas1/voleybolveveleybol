@@ -124,6 +124,34 @@
       });
   }
 
+  /* ---------- Üst menü kimlik alanı ---------- */
+  var kimlikAlan = document.querySelector('[data-kimlik]');
+  if (kimlikAlan) {
+    var mobilNav = document.getElementById('mobileNav');
+    var misafir = function () {
+      kimlikAlan.innerHTML = '<a class="btn btn-ghost btn-sm" href="/giris/">Giriş yap</a>';
+      if (mobilNav) mobilNav.insertAdjacentHTML('beforeend', '<a href="/giris/">Giriş yap</a>');
+    };
+    fetch('/api/ben', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('misafir'); return r.json(); })
+      .then(function (d) {
+        var ad = d.uye.kullanici_adi;
+        var a = document.createElement('a');
+        a.className = 'btn btn-ghost btn-sm';
+        a.href = '/profil/';
+        a.title = 'Profilim';
+        a.textContent = ad;
+        kimlikAlan.replaceChildren(a);
+        if (mobilNav) {
+          var m = document.createElement('a');
+          m.href = '/profil/';
+          m.textContent = 'Profilim (' + ad + ')';
+          mobilNav.appendChild(m);
+        }
+      })
+      .catch(misafir);
+  }
+
   /* ---------- Footer yılı ---------- */
   var y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();

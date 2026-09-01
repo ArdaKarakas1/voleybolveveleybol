@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Giriş yap | Voleybol ve Veleybol"
+  description="Voleybol ve Veleybol hesabına giriş yap; kural testlerini çöz, skorlarını takip et."
+  path="/giris/"
+  robots="noindex, nofollow"
+  scripts={['/assets/js/kimlik.js']}
+>
+<main id="main" class="section" style="min-height:70vh;display:grid;place-items:center">
+  <div class="shell" style="max-width:440px">
+    <div class="center" style="margin-bottom:28px">
+      <span class="eyebrow">Hesabın</span>
+      <h1 style="font-size:var(--step-3);margin-top:14px">Giriş yap</h1>
+    </div>
+    <div class="panel">
+      <form class="form-dizi" data-kimlik-form="giris" novalidate>
+        <div class="form-hata" id="formHata" role="alert"></div>
+        <div class="form-alan">
+          <label for="eposta">E-posta</label>
+          <input id="eposta" name="eposta" type="email" autocomplete="email" required autofocus />
+        </div>
+        <div class="form-alan">
+          <label for="parola">Parola</label>
+          <input id="parola" name="parola" type="password" autocomplete="current-password" required minlength="10" />
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Giriş yap</button>
+        <p class="form-alt">Hesabın yok mu? <a href="/kayit/">Kayıt ol</a></p>
+      </form>
+    </div>
+  </div>
+</main>
+</Base>

@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Profilim | Voleybol ve Veleybol"
+  path="/profil/"
+  robots="noindex, nofollow"
+  active=""
+  scripts={['/assets/js/profil.js']}
+>
+<main id="main" class="section">
+  <div class="shell" style="max-width:640px">
+    <div class="section-head" style="margin-bottom:24px">
+      <h2>Profilim</h2>
+    </div>
+
+    <p class="text-dim" id="profilYukleniyor">Profil yükleniyor…</p>
+
+    <div class="panel form-dizi" id="profilKart" hidden>
+      <div class="form-alan">
+        <label>Kullanıcı adı</label>
+        <p style="font-size:var(--step-1);font-weight:700" id="pKullanici">—</p>
+      </div>
+      <div class="form-alan">
+        <label>E-posta</label>
+        <p id="pEposta">—</p>
+        <span class="ipucu" id="pDogrulama">—</span>
+      </div>
+      <div class="form-alan">
+        <label>Üyelik tarihi</label>
+        <p id="pTarih">—</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <a class="btn btn-primary" href="/quiz/">Kural testini çöz</a>
+        <button class="btn btn-ghost" type="button" id="cikisBtn">Çıkış yap</button>
+      </div>
+      <p class="ipucu" style="margin-top:4px">Skor geçmişin ve sıralamadaki yerin çok yakında burada görünecek.</p>
+    </div>
+  </div>
+</main>
+</Base>
