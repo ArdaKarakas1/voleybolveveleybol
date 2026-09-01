@@ -1,0 +1,180 @@
+{
+  "set": {
+    "slug": "genel-kural-testi",
+    "baslik": "Voleybol Kural Testi",
+    "aciklama": "Temel kurallardan liberoya, servisten plaj voleybolu farklarına genel tarama.",
+    "kategori": "genel",
+    "zorluk": 1,
+    "yayinda": true
+  },
+  "sorular": [
+    {
+      "kaynak_no": 1,
+      "metin": "Normal bir set kaç sayıda biter?",
+      "secenekler": [
+        "21 sayı",
+        "25 sayı, en az 2 fark",
+        "25 sayı, fark aranmaz",
+        "30 sayı"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Set 25 sayıya ulaşan ve rakibiyle arasında en az 2 sayı fark bulunan takımın olur. 24–24 olursa fark 2'ye çıkana kadar oyun sürer; <strong>üst sınır yoktur</strong>."
+    },
+    {
+      "kaynak_no": 2,
+      "metin": "Bir takım topu karşıya göndermek için en fazla kaç kez vurabilir?",
+      "secenekler": [
+        "2",
+        "3 (blok teması hariç)",
+        "3 (blok teması dahil)",
+        "4"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Üç vuruş hakkı vardır ve <strong>blok teması bu üçe dahil değildir</strong>. Yani blokta topa dokunulduysa takımın hâlâ üç vuruşu kalır. Plaj voleybolunda ise blok teması vuruştan sayılır — en kritik farklardan biri budur."
+    },
+    {
+      "kaynak_no": 3,
+      "metin": "Servis file'e değip rakip sahaya geçerse ne olur?",
+      "secenekler": [
+        "Servis tekrarlanır",
+        "Hata, sayı rakibin",
+        "Oyun devam eder, geçerlidir",
+        "Hakem kararına bağlı"
+      ],
+      "dogru_index": 2,
+      "aciklama": "2001'den beri file'e değen servis geçerlidir (<em>let serve</em>). Top antenler arasından geçtiği sürece oyun devam eder. Top file'e takılıp kendi sahana düşerse hatadır."
+    },
+    {
+      "kaynak_no": 4,
+      "metin": "Libero aşağıdakilerden hangisini yapabilir?",
+      "secenekler": [
+        "Blok yapmak",
+        "Servis atmak",
+        "Arka bölgeden manşetle savunma yapmak",
+        "File üstünden hücum etmek"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Libero savunma ve servis karşılama uzmanıdır. <strong>Blok yapamaz</strong> (denemesi bile hata), FIVB kuralında <strong>servis atamaz</strong> ve topun tamamı file üst kenarından yukarıdayken <strong>hücum vuruşu yapamaz</strong>. Savunma ve karşılama onun asıl işidir."
+    },
+    {
+      "kaynak_no": 5,
+      "metin": "Beşinci set (tie-break) kaç sayı üzerinden oynanır?",
+      "secenekler": [
+        "25",
+        "21",
+        "15",
+        "11"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Tie-break 15 sayı üzerinden, yine en az 2 sayı farkla oynanır. Bir takım 8. sayıya ulaştığında takımlar saha değiştirir."
+    },
+    {
+      "kaynak_no": 6,
+      "metin": "Erkeklerde file yüksekliği kaç metredir?",
+      "secenekler": [
+        "2,24 m",
+        "2,35 m",
+        "2,43 m",
+        "2,50 m"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Erkeklerde 2,43 m, kadınlarda 2,24 m. Yükseklik sahanın ortasından ölçülür; yan çizgiler üzerindeki uçlar orta noktadan en fazla 2 cm yüksek olabilir."
+    },
+    {
+      "kaynak_no": 7,
+      "metin": "Servis karşılarken top önce kollarına, hemen ardından göğsüne değdi. Ne olur?",
+      "secenekler": [
+        "Çift vuruş, hata",
+        "Tutma, hata",
+        "Hata değil — takımın ilk vuruşunda ardışık temas serbesttir",
+        "Sadece hakem izin verirse geçerli"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Takımın <strong>ilk vuruşunda</strong> (servis karşılama veya hücum kurtarma), tek hareket içinde kalmak şartıyla top vücudun birden fazla bölümüne ardışık değebilir. Bu, çift vuruş kuralının en önemli istisnasıdır."
+    },
+    {
+      "kaynak_no": 8,
+      "metin": "Arka bölge oyuncusu, hücum çizgisine basarak sıçradı ve topa file üst kenarından yukarıdayken vurdu. Karar?",
+      "secenekler": [
+        "Geçerli hücum",
+        "Hata — çizgiye basılamaz",
+        "Sadece 5. sette hata",
+        "Blok varsa hata"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Arka bölge oyuncusu hücum çizgisinin <strong>gerisinden</strong> sıçramalıdır; sıçrama anında çizgiye basmak veya çizgiyi geçmek hatadır. Havadayken saha içine inmesi ise serbesttir."
+    },
+    {
+      "kaynak_no": 9,
+      "metin": "Rakibin servisine blok yapılabilir mi?",
+      "secenekler": [
+        "Evet, ön bölge oyuncuları yapabilir",
+        "Hayır, hiçbir şekilde",
+        "Sadece smaç servise yapılabilir",
+        "Sadece libero yapamaz"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Servis <strong>bloklanamaz</strong>. Ayrıca ön bölgeden, file üst kenarından yukarıdayken hücum vuruşuyla da karşılanamaz. Her ikisi de hatadır."
+    },
+    {
+      "kaynak_no": 10,
+      "metin": "Hakemin düdüğünden sonra servis kaç saniye içinde atılmalıdır?",
+      "secenekler": [
+        "5 saniye",
+        "8 saniye",
+        "10 saniye",
+        "Süre sınırı yok"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Düdükten sonra 8 saniye içinde servis atılmalıdır. Süre aşılırsa servis hatası verilir ve sayı rakibe geçer."
+    },
+    {
+      "kaynak_no": 11,
+      "metin": "Smaç sonrası inerken ayağının bir kısmı orta çizgiye bastı, ama bir kısmı hâlâ çizgi üzerinde. Karar?",
+      "secenekler": [
+        "Hata, rakip sahaya geçildi",
+        "Hata değil",
+        "Hakem uyarı verir",
+        "Rakip oyuncu varsa hata"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Ayağın bir kısmının orta çizgiye basması ya da çizgiyi kısmen geçmesi hata değildir; hata için <strong>ayağın tamamının</strong> rakip sahaya geçmesi gerekir. El ve ayaktan yukarıdaki vücut bölümleri içinse kural farklıdır: rakip sahaya tamamen geçseler bile, <strong>rakibin oyununu engellemedikleri sürece</strong> hata değildir."
+    },
+    {
+      "kaynak_no": 12,
+      "metin": "Plaj voleybolunda normal bir set kaç sayıya oynanır?",
+      "secenekler": [
+        "25",
+        "21",
+        "15",
+        "11"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Plaj voleybolunda setler 21 sayıdır (üçüncü set 15). Maç iki set kazanan takımın olur. Saha 16×8 m'dir, hücum çizgisi yoktur ve rotasyon uygulanmaz."
+    },
+    {
+      "kaynak_no": 13,
+      "metin": "2025–2028 kurallarına göre servis vuruşu anında hangi takım rotasyon sırasına uymak zorundadır?",
+      "secenekler": [
+        "Her iki takım",
+        "Sadece servis atan takım",
+        "Sadece servis karşılayan takım",
+        "Sadece beşinci sette her iki takım"
+      ],
+      "dogru_index": 2,
+      "aciklama": "2025–2028 kural değişikliğiyle <strong>yalnızca karşılayan takım</strong> servis anında rotasyon sırasına uygun durmak zorundadır. Servis atan takım, servisi atan oyuncu dışında <strong>kendi sahası içinde</strong> istediği yerde durabilir — rotasyon sırası zorunluluğu kaldırıldı. Kendi sahasında bulunma şartı ise sürüyor."
+    },
+    {
+      "kaynak_no": 14,
+      "metin": "Smaçtan sonra yere inerken formanın filenin alt kısmına değdi. Karar?",
+      "secenekler": [
+        "Hata değil, sadece üst bant sayılır",
+        "Hata değil, iniş hareket sayılmaz",
+        "Hata — topa oynama hareketi iniş tamamlanana kadar sürer",
+        "Sadece rakip itiraz ederse hata"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Antenler arasındaki file'e, topa oynama hareketi içindeyken yapılan her temas hatadır; <strong>\"sadece üst bant sayılır\" diye bir kural yoktur</strong>. Topa oynama hareketi, oyuncu güvenli şekilde yere inip yeni bir harekete hazır olduğunda biter — yani iniş hâlâ o harekete dahildir. İstisnalar: saç teması (ancak rakibin oyununu etkilediyse hata), antenlerin dışındaki file/direk/halat teması ve topun file'e çarparak rakip oyuncuya değmesi."
+    }
+  ]
+}

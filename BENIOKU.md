@@ -56,6 +56,32 @@ sayfa yedek değerlere düşer. Bu beklenen davranış; canlıda fonksiyonlar de
 Bu betik değişiklikleri commit'leyip push eder; Netlify derlemeyi kendisi yapar.
 **Netlify paneline sürükle-bırak ile deploy etme** — Git bağlantısını koparır.
 
+## Veritabanı (Neon Postgres)
+
+Üyelik ve skor altyapısı Neon'daki `voleybolveveleybol` projesinde
+(`curly-bonus-62218411`, Frankfurt). Bağlantı `.env.local` içindeki
+`DATABASE_URL` ile — bu dosya git'e girmez, `neon link` yeniden üretir.
+
+```
+db/migrations/*.sql    Şema değişiklikleri, numara sırasıyla uygulanır
+db/migrate.mjs         Göç çalıştırıcısı (uygulananları _gocler'de izler)
+db/sorular/*.json      Soruların kaynağı — sorular REPODA yaşar
+db/seed.mjs            Soruları veritabanına senkronlar (tekrar çalıştırmak güvenli)
+```
+
+```
+npm run db:migrate     Bekleyen göçleri uygula
+npm run db:seed        db/sorular/ içeriğini veritabanına yaz
+```
+
+Kurallar:
+- Uygulanmış bir göç dosyasını düzenleme; değişiklik = yeni numaralı dosya.
+- Soru eklemek/düzenlemek için `db/sorular/*.json` dosyasını değiştir,
+  `npm run db:seed` çalıştır. Doğru cevaplar (`dogru_index`) yalnızca burada
+  ve veritabanında durur — tarayıcıya gönderilecek hiçbir dosyaya koyma.
+- Dosyadan silinen soru veritabanından silinmez (geçmiş denemeler ona bağlı);
+  seed uyarı verir, karar elle verilir.
+
 ## Yeni sayfa eklemek
 
 `src/pages/` altına bir `.astro` dosyası koy, `Base` şablonunu kullan:
