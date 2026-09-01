@@ -16,6 +16,25 @@
     return (p && p.charAt(0) === '/' && p.charAt(1) !== '/') ? p : '/profil/';
   }
 
+  /* Google akışından hata koduyla dönülmüşse göster; donus'u Google bağlantısına taşı. */
+  var params = new URLSearchParams(location.search);
+  var OAUTH_HATALARI = {
+    'google-kapali': 'Google ile giriş şu an etkin değil. E-posta ile devam edebilirsin.',
+    'google-iptal': 'Google girişi iptal edildi.',
+    'google-state': 'Google girişi doğrulanamadı (oturum süresi dolmuş olabilir). Tekrar dene.',
+    'google-basarisiz': 'Google ile giriş tamamlanamadı. Tekrar dene ya da e-posta ile devam et.',
+    'eposta-yok': 'Google hesabın bir e-posta adresi vermedi. E-posta ile kayıt olabilirsin.',
+    'eposta-dogrulanmamis': 'Bu e-posta zaten kayıtlı ama Google hesabında doğrulanmamış görünüyor. E-posta ve parolanla giriş yap.'
+  };
+  if (params.get('hata') && OAUTH_HATALARI[params.get('hata')]) {
+    hataKutu.textContent = OAUTH_HATALARI[params.get('hata')];
+    hataKutu.classList.add('gorunur');
+  }
+  var googleLink = document.querySelector('[data-google-giris]');
+  if (googleLink && params.get('donus')) {
+    googleLink.href += '?donus=' + encodeURIComponent(params.get('donus'));
+  }
+
   function hataGoster(mesaj, alan) {
     hataKutu.textContent = mesaj;
     hataKutu.classList.add('gorunur');

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import GoogleGiris from '../components/GoogleGiris.astro';
 ---
 <Base
   title="Giriş yap | Voleybol ve Veleybol"
@@ -26,6 +27,7 @@ import Base from '../layouts/Base.astro';
           <input id="parola" name="parola" type="password" autocomplete="current-password" required minlength="10" />
         </div>
         <button class="btn btn-primary" type="submit" style="width:100%">Giriş yap</button>
+        <GoogleGiris />
         <p class="form-alt">Hesabın yok mu? <a href="/kayit/">Kayıt ol</a></p>
       </form>
     </div>

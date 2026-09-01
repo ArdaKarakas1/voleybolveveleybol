@@ -596,3 +596,13 @@ mark { background: color-mix(in srgb, var(--orange) 35%, transparent); color: in
 .kimlik-alan { min-width: 96px; display: flex; justify-content: flex-end; }
 .kimlik-alan .btn { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (max-width: 480px) { .kimlik-alan { min-width: 0; } }
+
+/* Google ile giriş */
+.form-ayrac { display: flex; align-items: center; gap: 14px; color: var(--text-mute); font-size: 13px; }
+.form-ayrac::before, .form-ayrac::after { content: ""; flex: 1; height: 1px; background: var(--line-strong); }
+.btn-google {
+  width: 100%; justify-content: center; gap: 10px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--line-strong);
+}
+.btn-google:hover { border-color: var(--text-dim); box-shadow: var(--shadow-sm); }
+.btn-google svg { width: 19px; height: 19px; flex: none; }
