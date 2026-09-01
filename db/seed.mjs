@@ -55,14 +55,14 @@ try {
     await client.query('BEGIN');
     try {
       const { rows: [set] } = await client.query(
-        `INSERT INTO setler (slug, baslik, aciklama, kategori, zorluk, yayinda)
-         VALUES ($1, $2, $3, $4, $5, $6)
+        `INSERT INTO setler (slug, baslik, aciklama, kategori, zorluk, yayinda, goster)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
          ON CONFLICT (slug) DO UPDATE SET
            baslik = EXCLUDED.baslik, aciklama = EXCLUDED.aciklama,
            kategori = EXCLUDED.kategori, zorluk = EXCLUDED.zorluk,
-           yayinda = EXCLUDED.yayinda
+           yayinda = EXCLUDED.yayinda, goster = EXCLUDED.goster
          RETURNING id`,
-        [s.slug, s.baslik, s.aciklama ?? '', s.kategori ?? 'genel', s.zorluk ?? 1, s.yayinda ?? false]
+        [s.slug, s.baslik, s.aciklama ?? '', s.kategori ?? 'genel', s.zorluk ?? 1, s.yayinda ?? false, s.goster ?? null]
       );
 
       let eklendi = 0, guncellendi = 0;

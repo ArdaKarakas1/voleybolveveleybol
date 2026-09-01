@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Sıralama — Voleybol Kural Testi skorları | Voleybol ve Veleybol"
+  description="Voleybol kural testinde en yüksek skorlar. Her üyenin en iyi denemesi sayılır; eşitlikte hızlı olan öne geçer. Sen de çöz, sıralamaya gir."
+  path="/siralama/"
+  active="siralama"
+  scripts={['/assets/js/siralama.js']}
+>
+<main id="main" class="section">
+  <div class="shell" style="max-width:760px">
+    <div class="center" style="margin-bottom:30px">
+      <span class="eyebrow">Skor tablosu</span>
+      <h1 style="font-size:var(--step-4);margin-top:16px">Sıralama</h1>
+      <p class="text-dim" style="margin-top:14px;max-width:52ch;margin-inline:auto">
+        Her üyenin <strong>en iyi</strong> denemesi sayılır; eşitlikte süresi kısa olan öne geçer.
+        İstediğin kadar tekrar çözebilirsin.
+      </p>
+    </div>
+
+    <div class="panel" id="siralamaKart">
+      <div class="empty" id="siralamaDurum">Sıralama yükleniyor…</div>
+      <div class="table-sar" hidden id="siralamaTabloSar">
+        <table class="siralama-tablo">
+          <thead>
+            <tr><th>#</th><th>Kullanıcı</th><th class="sag">Skor</th><th class="sag">Süre</th><th class="sag">Tarih</th></tr>
+          </thead>
+          <tbody id="siralamaGovde"></tbody>
+        </table>
+      </div>
+      <p class="text-dim center" style="margin-top:18px;font-size:14px" id="siralamaNot" hidden></p>
+    </div>
+
+    <div class="center" style="margin-top:26px">
+      <a class="btn btn-primary" href="/quiz/">Sen de çöz, sıralamaya gir</a>
+    </div>
+  </div>
+</main>
+</Base>
