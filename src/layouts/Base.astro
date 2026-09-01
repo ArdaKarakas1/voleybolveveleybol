@@ -25,6 +25,12 @@ const {
 const site = Astro.site ?? new URL('https://voleybolveveleybol.com');
 const canonical = new URL(path, site).href;
 const ogImage = new URL('/assets/img/og.jpg', site).href;
+
+// Önbellek kırıcı: /assets/* 1 yıl "immutable" önbelleklenir (netlify.toml).
+// Adrese derleme sürümü eklenince her deploy'da tarayıcı yeni dosyayı çeker.
+// Netlify derlemede COMMIT_REF verir; yerelde 'dev' kalır.
+const SURUM = (process.env.COMMIT_REF || 'dev').slice(0, 10);
+const v = (yol) => `${yol}?v=${SURUM}`;
 ---
 <!doctype html>
 <html lang="tr" data-theme="light">
@@ -61,7 +67,7 @@ const ogImage = new URL('/assets/img/og.jpg', site).href;
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 {preconnect.map((href) => <link rel="preconnect" href={href} />)}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" />
-<link rel="stylesheet" href="/assets/css/site.css" />
+<link rel="stylesheet" href={v('/assets/css/site.css')} />
 {preload && <link rel="preload" as="image" href={preload} />}
 
 <slot name="head" />
@@ -75,7 +81,7 @@ const ogImage = new URL('/assets/img/og.jpg', site).href;
 
 {chrome && <SiteFooter links={footerLinks} />}
 
-<script src="/assets/js/site.js" defer></script>
-{scripts.map((src) => <script src={src} defer></script>)}
+<script src={v('/assets/js/site.js')} defer></script>
+{scripts.map((src) => <script src={v(src)} defer></script>)}
 </body>
 </html>
