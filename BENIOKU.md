@@ -76,11 +76,15 @@ npm run db:seed        db/sorular/ içeriğini veritabanına yaz
 
 Kurallar:
 - Uygulanmış bir göç dosyasını düzenleme; değişiklik = yeni numaralı dosya.
-- Soru eklemek/düzenlemek için `db/sorular/*.json` dosyasını değiştir,
-  `npm run db:seed` çalıştır. Doğru cevaplar (`dogru_index`) yalnızca burada
-  ve veritabanında durur — tarayıcıya gönderilecek hiçbir dosyaya koyma.
+- Soru eklemek/düzenlemek için `db/sorular/*.json` dosyasını değiştir, sonra:
+  `node db/uret-quiz-json.mjs && npm run db:seed`
+- `public/data/quiz.json` ELLE DÜZENLENMEZ — `db/uret-quiz-json.mjs` üretir.
+  Sayfa, havuzdaki sorulardan her denemede `goster` kadarını rastgele seçer.
 - Dosyadan silinen soru veritabanından silinmez (geçmiş denemeler ona bağlı);
   seed uyarı verir, karar elle verilir.
+- Faz 2'ye kadar doğru cevaplar quiz.json ile tarayıcıya iniyor (bilinçli:
+  skor henüz kaydedilmiyor). Puanlama sunucuya taşınınca bu dosyadan
+  `d` alanı çıkarılacak.
 
 ## Yeni sayfa eklemek
 

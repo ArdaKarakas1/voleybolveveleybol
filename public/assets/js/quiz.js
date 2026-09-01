@@ -24,7 +24,9 @@
   }
 
   function start() {
-    order = shuffle(DATA.sorular.map(function (_, i) { return i; }));
+    // Havuzun tamamı karıştırılır, her denemede rastgele bir alt küme gösterilir.
+    var n = Math.min(DATA.goster || DATA.sorular.length, DATA.sorular.length);
+    order = shuffle(DATA.sorular.map(function (_, i) { return i; })).slice(0, n);
     idx = 0; score = 0; answered = false;
     renderQuestion();
   }
