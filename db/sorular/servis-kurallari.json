@@ -1,0 +1,133 @@
+{
+  "set": {
+    "slug": "servis-kurallari",
+    "baslik": "Servis Kuralları",
+    "aciklama": "8 saniyeden perdelemeye, file temasından smaç servise — servisin tüm incelikleri.",
+    "kategori": "servis",
+    "zorluk": 2,
+    "yayinda": true,
+    "goster": 10
+  },
+  "sorular": [
+    {
+      "kaynak_no": 1,
+      "metin": "Servis file'e değip rakip sahaya geçerse ne olur?",
+      "secenekler": [
+        "Servis tekrarlanır",
+        "Hata, sayı rakibin",
+        "Oyun devam eder, geçerlidir",
+        "Hakem kararına bağlı"
+      ],
+      "dogru_index": 2,
+      "aciklama": "2001'den beri file'e değen servis geçerlidir (<em>let serve</em>). Top antenler arasından geçtiği sürece oyun devam eder. Top file'e takılıp kendi sahana düşerse hatadır."
+    },
+    {
+      "kaynak_no": 2,
+      "metin": "Rakibin servisine blok yapılabilir mi?",
+      "secenekler": [
+        "Evet, ön bölge oyuncuları yapabilir",
+        "Hayır, hiçbir şekilde",
+        "Sadece smaç servise yapılabilir",
+        "Sadece libero yapamaz"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Servis <strong>bloklanamaz</strong>. Ayrıca ön bölgeden, file üst kenarından yukarıdayken hücum vuruşuyla da karşılanamaz. Her ikisi de hatadır."
+    },
+    {
+      "kaynak_no": 3,
+      "metin": "Hakemin düdüğünden sonra servis kaç saniye içinde atılmalıdır?",
+      "secenekler": [
+        "5 saniye",
+        "8 saniye",
+        "10 saniye",
+        "Süre sınırı yok"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Düdükten sonra 8 saniye içinde servis atılmalıdır. Süre aşılırsa servis hatası verilir ve sayı rakibe geçer."
+    },
+    {
+      "kaynak_no": 4,
+      "metin": "Servis atan oyuncu topu havaya attı ama vurmadan yere bıraktı (FIVB). Karar?",
+      "secenekler": [
+        "Bir tekrar hakkı vardır",
+        "Servis hatası — sayı ve servis rakibin",
+        "8 saniye yeniden başlar",
+        "Sarı kart görür"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Topu havaya atma/bırakma hakkı <strong>yalnızca bir kezdir</strong>; atılan topu vurmadan yere bırakmak servis hatasıdır. FIVB’de tekrar hakkı 2000’lerde kaldırıldı. Topu elde çevirmek veya sektirmek ise serbesttir."
+    },
+    {
+      "kaynak_no": 5,
+      "metin": "Smaç serviste oyuncu dip çizginin gerisinden sıçradı, topa havadayken vurdu ve saha içine indi. Karar?",
+      "secenekler": [
+        "Hata — saha içine inilemez",
+        "Hata değil — vuruş anında zemin teması önemlidir",
+        "Hata — smaç servis yasaktır",
+        "Yalnızca ön bölgeye inerse hata"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Kural <strong>vuruş (sıçrama) anına</strong> bakar: o anda dip çizgiye veya saha içine basılamaz. Vuruştan sonra saha içine inmek serbesttir."
+    },
+    {
+      "kaynak_no": 6,
+      "metin": "2025–2028 değişikliğine göre servis atan takımın oyuncuları, top file’i geçene kadar ne yapamaz?",
+      "secenekler": [
+        "Yerinden kımıldayamaz",
+        "Ellerini baş hizasının üzerine kaldıramaz",
+        "Zıplayamaz",
+        "Konuşamaz"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Yeni kural: servis atan takımın oyuncularının top file’i geçene kadar <strong>ellerini baş hizasının üzerine kaldırması yasaktır</strong> — topun o oyuncunun üzerinden geçip geçmediğine bakılmaz. Toplu perdeleme (screening) da ayrıca yasaktır."
+    },
+    {
+      "kaynak_no": 7,
+      "metin": "Yanlış oyuncunun servis attığı sonradan anlaşıldı ama hatanın başladığı an tespit edilemiyor. Ne olur?",
+      "secenekler": [
+        "Set iptal edilir",
+        "Hatalı takımın tüm sayıları silinir",
+        "Sayılar iptal edilmez; rakibe yalnızca bir sayı ve servis verilir",
+        "Maç hükmen rakibin olur"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Hatanın başladığı an tespit <em>edilebiliyorsa</em> o andan itibaren hatalı takımın kazandığı sayılar iptal edilir. Tespit <strong>edilemiyorsa</strong> hiçbir sayı silinmez; tek yaptırım rakibe bir sayı ve servistir."
+    },
+    {
+      "kaynak_no": 8,
+      "metin": "Servis sahanın neresinden atılır?",
+      "secenekler": [
+        "Sağ arka köşedeki 3 m’lik bölgeden",
+        "Dip çizgi gerisindeki 9 m genişliğindeki bölgeden",
+        "Sahanın herhangi bir yerinden",
+        "Serbest bölgenin istenen yerinden"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Servis bölgesi, dip çizginin gerisinde <strong>9 m genişliğindedir</strong> — yani servis sağdan, soldan veya ortadan atılabilir. 1994’ten önce yalnızca sağdaki dar bölgeden atılabiliyordu."
+    },
+    {
+      "kaynak_no": 9,
+      "metin": "Float serviste vuruştan sonra el neden takip hareketi yapmadan durur?",
+      "secenekler": [
+        "Kural zorunluluğu olduğu için",
+        "Topa dönü vermemek için — dönüsüz top havada sapar",
+        "Daha sert vurmak için",
+        "Sakatlanmamak için"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Float servisin gücü <strong>dönüsüz toptadır</strong>: hava akımı topun yüzeyinde düzensiz davranır ve top beklenmedik şekilde sapar. Kolun devam etmesi topa dönü verir ve etkiyi bozar."
+    },
+    {
+      "kaynak_no": 10,
+      "metin": "Kritik sayılarda çoğu takım neden smaç servis yerine jump float tercih eder?",
+      "secenekler": [
+        "Daha çok sayı getirdiği için",
+        "Smaç servisin hata oranı belirgin biçimde daha yüksek olduğu için",
+        "Kurallar smaç servisi kısıtladığı için",
+        "Jump float daha hızlı olduğu için"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Smaç servis en agresif servistir ama <strong>hata oranı float servise göre belirgin biçimde fazladır</strong>. Kritik sayılarda güvenli ama yine rahatsız edici olan jump float öne çıkar."
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "set": {
+    "slug": "temel-oyun",
+    "baslik": "Temel Oyun ve Sayı Sistemi",
+    "aciklama": "Saha, top, set sayıları, rotasyon ve mevkiler — voleybolun iskeleti.",
+    "kategori": "temel",
+    "zorluk": 1,
+    "yayinda": true,
+    "goster": 10
+  },
+  "sorular": [
+    {
+      "kaynak_no": 1,
+      "metin": "Normal bir set kaç sayıda biter?",
+      "secenekler": [
+        "21 sayı",
+        "25 sayı, en az 2 fark",
+        "25 sayı, fark aranmaz",
+        "30 sayı"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Set 25 sayıya ulaşan ve rakibiyle arasında en az 2 sayı fark bulunan takımın olur. 24–24 olursa fark 2'ye çıkana kadar oyun sürer; <strong>üst sınır yoktur</strong>."
+    },
+    {
+      "kaynak_no": 2,
+      "metin": "Beşinci set (tie-break) kaç sayı üzerinden oynanır?",
+      "secenekler": [
+        "25",
+        "21",
+        "15",
+        "11"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Tie-break 15 sayı üzerinden, yine en az 2 sayı farkla oynanır. Bir takım 8. sayıya ulaştığında takımlar saha değiştirir."
+    },
+    {
+      "kaynak_no": 3,
+      "metin": "Erkeklerde file yüksekliği kaç metredir?",
+      "secenekler": [
+        "2,24 m",
+        "2,35 m",
+        "2,43 m",
+        "2,50 m"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Erkeklerde 2,43 m, kadınlarda 2,24 m. Yükseklik sahanın ortasından ölçülür; yan çizgiler üzerindeki uçlar orta noktadan en fazla 2 cm yüksek olabilir."
+    },
+    {
+      "kaynak_no": 4,
+      "metin": "2025–2028 kurallarına göre servis vuruşu anında hangi takım rotasyon sırasına uymak zorundadır?",
+      "secenekler": [
+        "Her iki takım",
+        "Sadece servis atan takım",
+        "Sadece servis karşılayan takım",
+        "Sadece beşinci sette her iki takım"
+      ],
+      "dogru_index": 2,
+      "aciklama": "2025–2028 kural değişikliğiyle <strong>yalnızca karşılayan takım</strong> servis anında rotasyon sırasına uygun durmak zorundadır. Servis atan takım, servisi atan oyuncu dışında <strong>kendi sahası içinde</strong> istediği yerde durabilir — rotasyon sırası zorunluluğu kaldırıldı. Kendi sahasında bulunma şartı ise sürüyor."
+    },
+    {
+      "kaynak_no": 5,
+      "metin": "Kadınlarda file yüksekliği kaç metredir?",
+      "secenekler": [
+        "2,14 m",
+        "2,24 m",
+        "2,34 m",
+        "2,43 m"
+      ],
+      "dogru_index": 1,
+      "aciklama": "File yüksekliği erkeklerde <strong>2,43 m</strong>, kadınlarda <strong>2,24 m</strong>’tür. Sahanın ortasından ölçülür; iki uç orta noktadan en fazla 2 cm yüksek olabilir."
+    },
+    {
+      "kaynak_no": 6,
+      "metin": "Voleybol sahasının oyun alanı ölçüleri nedir?",
+      "secenekler": [
+        "16 m × 8 m",
+        "18 m × 9 m",
+        "20 m × 10 m",
+        "18 m × 10 m"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Oyun alanı <strong>18 m × 9 m</strong>’dir; orta çizgi sahayı 9×9’luk iki alana böler. 16×8 ise <em>plaj voleybolunun</em> ölçüsüdür."
+    },
+    {
+      "kaynak_no": 7,
+      "metin": "Ralli sayı (rally point) sisteminde sayıyı kim alır?",
+      "secenekler": [
+        "Yalnızca servis atan takım",
+        "Ralliyi kazanan takım — servisi kim atarsa atsın",
+        "Yalnızca servis karşılayan takım",
+        "Ralli 30 saniyeyi geçerse kimse"
+      ],
+      "dogru_index": 1,
+      "aciklama": "1999’dan beri <strong>her ralli bir sayıyla biter</strong>. Eski sistemde yalnızca servis atan takım sayı alabiliyordu ve maçlar çok uzuyordu."
+    },
+    {
+      "kaynak_no": 8,
+      "metin": "Beşinci sette (tie-break) takımlar sahayı ne zaman değiştirir?",
+      "secenekler": [
+        "Değiştirmez",
+        "Bir takım 5. sayıya ulaştığında",
+        "Bir takım 8. sayıya ulaştığında",
+        "Her 7 sayıda bir"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Tie-break’te bir takım <strong>8. sayıya</strong> ulaştığında saha değişilir — salon koşullarından doğan avantaj eşitlenir. “Her 7 sayıda bir” plaj voleybolunun kuralıdır."
+    },
+    {
+      "kaynak_no": 9,
+      "metin": "Servisi rakipten kazanan takım servis atmadan önce ne yapar?",
+      "secenekler": [
+        "Aynı dizilişle hemen servis atar",
+        "Saat yönünde bir pozisyon döner",
+        "Saat yönünün tersine bir pozisyon döner",
+        "İstediği oyuncuyu servise gönderir"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Servisi rakipten kazanan takım <strong>saat yönünde bir pozisyon döner</strong>; 2 numaradaki oyuncu 1 numaraya geçip servisi atar. Servisi zaten elinde tutan takım dönmez."
+    },
+    {
+      "kaynak_no": 10,
+      "metin": "Pasörün rotasyonda tam karşısında dizilen ve ağırlıklı hücum yükünü taşıyan mevki hangisidir?",
+      "secenekler": [
+        "Smaçör (dış oyuncu)",
+        "Orta oyuncu",
+        "Pasör çaprazı (opposite)",
+        "Libero"
+      ],
+      "dogru_index": 2,
+      "aciklama": "<strong>Pasör çaprazı</strong> rotasyonda pasörün tam karşısındadır ve çoğunlukla 2 numaradan hücumu bitirir. Smaçör 4 numaradan hücum eder ve servis de karşılar."
+    },
+    {
+      "kaynak_no": 11,
+      "metin": "5-1 dizilişinde takım kaç pasörle oynar?",
+      "secenekler": [
+        "Tek pasör",
+        "İki pasör",
+        "Üç pasör",
+        "Pasörsüz — herkes pas atar"
+      ],
+      "dogru_index": 0,
+      "aciklama": "<strong>5-1</strong>: tek pasör, beş hücumcu — pasör tüm rotasyonlarda pas verir; en yaygın modern sistemdir. 6-2’de iki pasör vardır ve daima arka bölgeden pas verirler."
+    },
+    {
+      "kaynak_no": 12,
+      "metin": "Doğrudan sayı getiren servise ne denir?",
+      "secenekler": [
+        "Side-out",
+        "Ace (as)",
+        "Let serve",
+        "Pipe"
+      ],
+      "dogru_index": 1,
+      "aciklama": "<strong>Ace</strong>: top rakip sahaya değer ve karşılanamaz, ya da karşılama topun geri dönemeyeceği kadar bozulur. Türkçede “servis ası” da denir."
+    },
+    {
+      "kaynak_no": 13,
+      "metin": "Maç öncesi kurayı kazanan kaptan neyi seçer?",
+      "secenekler": [
+        "Yalnızca sahayı",
+        "Servis/karşılama YA DA saha tarafını",
+        "İlk altıyı",
+        "Topu"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Kurayı kazanan, <strong>servis atmak/karşılamak ile saha tarafından birini</strong> seçer; kaybeden kalanı alır. Beşinci sette yeni kura atılır."
+    },
+    {
+      "kaynak_no": 14,
+      "metin": "Setler arasındaki standart ara kaç dakikadır?",
+      "secenekler": [
+        "1",
+        "3",
+        "5",
+        "10"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Setler arası ara <strong>3 dakikadır</strong>. Yarışma yönetmeliği izin verirse 2. ile 3. set arasındaki ara 10 dakikaya çıkarılabilir."
+    }
+  ]
+}

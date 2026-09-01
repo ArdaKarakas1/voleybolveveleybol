@@ -1,0 +1,109 @@
+{
+  "set": {
+    "slug": "libero-uzmanligi",
+    "baslik": "Libero Uzmanlığı",
+    "aciklama": "Farklı formalı oyuncunun yapabildikleri, yapamadıkları ve değişim kuralları.",
+    "kategori": "libero",
+    "zorluk": 2,
+    "yayinda": true,
+    "goster": 8
+  },
+  "sorular": [
+    {
+      "kaynak_no": 1,
+      "metin": "Libero aşağıdakilerden hangisini yapabilir?",
+      "secenekler": [
+        "Blok yapmak",
+        "Servis atmak",
+        "Arka bölgeden manşetle savunma yapmak",
+        "File üstünden hücum etmek"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Libero savunma ve servis karşılama uzmanıdır. <strong>Blok yapamaz</strong> (denemesi bile hata), FIVB kuralında <strong>servis atamaz</strong> ve topun tamamı file üst kenarından yukarıdayken <strong>hücum vuruşu yapamaz</strong>. Savunma ve karşılama onun asıl işidir."
+    },
+    {
+      "kaynak_no": 2,
+      "metin": "Libero ön bölgede parmak pasla top verdi. Takım arkadaşı bu topla ne yapamaz?",
+      "secenekler": [
+        "Hiçbir kısıt yok",
+        "Topa file üst kenarından yukarıdayken hücum vuruşu yapamaz",
+        "Topu bloklayamaz",
+        "Manşetle oynayamaz"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Libero <strong>ön bölgede</strong> parmak pas verdiyse, o topa file üstünden hücum yapılamaz. Aynı pası <strong>hücum çizgisinin gerisinden</strong> verirse bu kısıt yoktur."
+    },
+    {
+      "kaynak_no": 3,
+      "metin": "Libero takım kaptanı olabilir mi?",
+      "secenekler": [
+        "Hayır, kurallar yasaklar",
+        "Evet — bu yasak 2022’de kaldırıldı",
+        "Yalnızca ulusal liglerde",
+        "Yalnızca sahada oyun kaptanıysa"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Sık bilinen yanlış: libero artık <strong>hem takım kaptanı hem oyun kaptanı olabilir</strong> — yasak 2022’de kaldırıldı. Değişmeyen yasaklar: blok, file üstü hücum ve FIVB kuralında servis."
+    },
+    {
+      "kaynak_no": 4,
+      "metin": "Libero değişimi için hakemden izin gerekir mi?",
+      "secenekler": [
+        "Evet, her değişimde",
+        "Hayır — top oyun dışındayken serbest bölgeden yapılır",
+        "Yalnızca set başında serbesttir",
+        "Antrenör talep ederse gerekmez"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Libero değişimi <strong>izin gerektirmez</strong>: top oyun dışındayken, düdükten önce, hücum çizgisiyle dip çizgi arasındaki serbest bölgeden yapılır. İki libero değişimi arasında tamamlanmış bir ralli olmalıdır ve bu değişimler 6 değişiklik hakkına sayılmaz."
+    },
+    {
+      "kaynak_no": 5,
+      "metin": "Libero neden farklı renk forma giyer?",
+      "secenekler": [
+        "Şıklık için",
+        "Hakemlerin kısıtlı kurallarını takip edebilmesi için ayırt edilmesi gerekir",
+        "Kaptan olduğu için",
+        "Kural değil, gelenek"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Libero <strong>takım arkadaşlarından farklı renk forma giymek zorundadır</strong> — hakemler blok, hücum ve değişim kısıtlarını ancak liberoyu anında ayırt ederek uygulayabilir."
+    },
+    {
+      "kaynak_no": 6,
+      "metin": "Libero kimin yerine oyuna girebilir?",
+      "secenekler": [
+        "Herhangi bir oyuncunun",
+        "Yalnızca arka bölge oyuncularının",
+        "Yalnızca pasörün",
+        "Yalnızca orta oyuncunun"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Libero <strong>yalnızca arka bölge oyuncularının</strong> yerine girer. Pratikte çoğunlukla orta oyuncular arka bölgeye geçtiğinde onların yerini alır."
+    },
+    {
+      "kaynak_no": 7,
+      "metin": "İki libero değişimi arasında ne olması gerekir?",
+      "secenekler": [
+        "Bir mola",
+        "Tamamlanmış bir ralli",
+        "Hakem onayı",
+        "Set bitişi"
+      ],
+      "dogru_index": 1,
+      "aciklama": "İki libero değişimi arasında <strong>tamamlanmış bir ralli</strong> olmalıdır. Değişim hakem izni gerektirmez; top oyun dışındayken serbest bölgeden yapılır."
+    },
+    {
+      "kaynak_no": 8,
+      "metin": "FIVB kurallarına göre libero servis atabilir mi?",
+      "secenekler": [
+        "Evet, her rotasyonda",
+        "Hayır — FIVB kuralında servis atamaz (bazı ulusal ligler izin verebilir)",
+        "Yalnızca tie-break’te",
+        "Yalnızca takım kaptanıysa"
+      ],
+      "dogru_index": 1,
+      "aciklama": "FIVB kuralında libero <strong>servis atamaz</strong>. Bazı ulusal liglerde (örneğin bazı gençlik ve okul ligleri) bir rotasyonda servise izin verilebilir — ama uluslararası kural yasaktır."
+    }
+  ]
+}

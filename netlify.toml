@@ -24,7 +24,12 @@
 
 [[redirects]]
   from = "/quiz"
-  to = "/quiz/"
+  to = "/testler/"
+  status = 301
+
+[[redirects]]
+  from = "/quiz/"
+  to = "/testler/"
   status = 301
 
 # ---------- Güvenlik ve önbellek başlıkları ----------

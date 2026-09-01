@@ -1,0 +1,157 @@
+{
+  "set": {
+    "slug": "mac-yonetimi",
+    "baslik": "Maç Yönetimi ve Plaj Farkları",
+    "aciklama": "Mola, oyuncu değişikliği, kartlar, video kontrol ve plaj voleybolunun ayrıştığı noktalar.",
+    "kategori": "yonetim",
+    "zorluk": 1,
+    "yayinda": true,
+    "goster": 10
+  },
+  "sorular": [
+    {
+      "kaynak_no": 1,
+      "metin": "Plaj voleybolunda normal bir set kaç sayıya oynanır?",
+      "secenekler": [
+        "25",
+        "21",
+        "15",
+        "11"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Plaj voleybolunda setler 21 sayıdır (üçüncü set 15). Maç iki set kazanan takımın olur. Saha 16×8 m'dir, hücum çizgisi yoktur ve rotasyon uygulanmaz."
+    },
+    {
+      "kaynak_no": 2,
+      "metin": "FIVB yarışmalarında iki liberoyla birlikte maç kadrosu en fazla kaç oyuncu olabilir?",
+      "secenekler": [
+        "12",
+        "13",
+        "14",
+        "16"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Standart maç kadrosu en fazla 12 oyuncudur; FIVB yarışmalarında iki libero ile <strong>14’e</strong> çıkabilir."
+    },
+    {
+      "kaynak_no": 3,
+      "metin": "Top oyun dışındayken hakemle kim konuşabilir?",
+      "secenekler": [
+        "Antrenör",
+        "Yalnızca oyun kaptanı",
+        "Sahadaki her oyuncu",
+        "Pasör"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Yalnızca <strong>sahadaki oyun kaptanı</strong> hakemle konuşabilir. Antrenör mola ve oyuncu değişikliği talep eder ama hakemle kural tartışamaz."
+    },
+    {
+      "kaynak_no": 4,
+      "metin": "Her takım set başına kaç mola alabilir ve mola kaç saniyedir?",
+      "secenekler": [
+        "1 mola, 60 sn",
+        "2 mola, 30 sn",
+        "2 mola, 60 sn",
+        "3 mola, 30 sn"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Set başına <strong>2 mola</strong>, her biri <strong>30 saniye</strong>. 8. ve 16. sayılardaki 60 saniyelik teknik molalar salon voleybolunun FIVB kurallarından tamamen çıkarıldı."
+    },
+    {
+      "kaynak_no": 5,
+      "metin": "Set başına oyuncu değişikliği sınırı kaçtır ve libero bu sayıya dahil midir?",
+      "secenekler": [
+        "6 — libero dahil",
+        "6 — libero dahil değil",
+        "8 — libero dahil değil",
+        "Sınırsız"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Set başına en fazla <strong>6 değişiklik</strong> yapılabilir; <strong>libero değişimleri bu sayıya dahil değildir</strong>. İlk dizilişteki oyuncu sette bir kez çıkıp yalnızca yerine giren oyuncunun yerine geri dönebilir."
+    },
+    {
+      "kaynak_no": 6,
+      "metin": "Oyuncuya tek başına kırmızı kart gösterildi. Sonucu nedir?",
+      "secenekler": [
+        "Yalnızca uyarı, kayda geçer",
+        "Rakibe bir sayı ve servis",
+        "Oyuncu seti dışarıda tamamlar",
+        "Oyuncu maçtan diskalifiye olur"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Kademeler: sarı = uyarı (ceza yok) · <strong>kırmızı = rakibe bir sayı ve servis</strong> · sarı+kırmızı tek elde = o set için çıkarma · ayrı ellerde = maçtan diskalifiye."
+    },
+    {
+      "kaynak_no": 7,
+      "metin": "Video kontrolde (challenge) takım itirazında haklı çıkarsa ne olur?",
+      "secenekler": [
+        "İtiraz hakkı yine bir azalır",
+        "İtiraz hakkını kaybetmez",
+        "Ek bir mola kazanır",
+        "Rakibe sarı kart verilir"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Haklı çıkan takım <strong>itiraz hakkını kaybetmez</strong>; haksız çıkarsa hakkı azalır. Hak sayısı yarışma yönetmeliğine bağlıdır (genellikle set başına 2)."
+    },
+    {
+      "kaynak_no": 8,
+      "metin": "Plaj voleybolunda blok teması takımın vuruş sayısına dahil midir?",
+      "secenekler": [
+        "Hayır, salonla aynıdır",
+        "Evet — blok üç vuruştan sayılır",
+        "Yalnızca ilk sette sayılır",
+        "Plajda blok yasaktır"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Salonla en kritik fark: plajda <strong>blok teması üç vuruştan sayılır</strong> — bloktan sonra takımın iki vuruşu kalır. Ayrıca plajda hücum çizgisi ve rotasyon yoktur, saha 16×8’dir."
+    },
+    {
+      "kaynak_no": 9,
+      "metin": "Plaj voleybolunda açık el plase (parmak uçlarıyla topu yönlendirme)?",
+      "secenekler": [
+        "Serbesttir",
+        "Yasaktır — plase yumruk, sert eklem veya avuç içiyle yapılır",
+        "Yalnızca file üstünde yasaktır",
+        "Yalnızca servis karşılamada yasaktır"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Plajda <strong>açık el plase (dink) yasaktır</strong>; plase yumrukla, sert parmak eklemleriyle veya avuç içiyle yapılabilir. Salonda ise parmak uçlarıyla plase serbesttir."
+    },
+    {
+      "kaynak_no": 10,
+      "metin": "Sarı ve kırmızı kart TEK ELDE birlikte gösterilirse ne olur?",
+      "secenekler": [
+        "Rakibe bir sayı",
+        "Çıkarma — oyuncu o set boyunca oyun alanını terk eder",
+        "Diskalifiye — maçtan atılır",
+        "Yalnızca uyarı"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Tek elde sarı+kırmızı = <strong>çıkarma</strong>: oyuncu o seti dışarıda tamamlar. Kartlar <strong>ayrı ellerde</strong> gösterilirse <strong>diskalifiye</strong>dir — oyuncu maçın kalanında salonu terk eder."
+    },
+    {
+      "kaynak_no": 11,
+      "metin": "Takım oyunu geciktirirse ilk yaptırım nedir?",
+      "secenekler": [
+        "Doğrudan rakibe sayı",
+        "Geciktirme uyarısı; sonraki her geciktirmede rakibe sayı ve servis",
+        "Kırmızı kart",
+        "Mola hakkı silinir"
+      ],
+      "dogru_index": 1,
+      "aciklama": "İlk geciktirmede <strong>geciktirme uyarısı</strong> verilir; sonraki her geciktirmede <strong>geciktirme cezası</strong> (rakibe bir sayı ve servis) uygulanır. Bu kademeler kişiye değil takıma işler."
+    },
+    {
+      "kaynak_no": 12,
+      "metin": "Plaj voleybolunda takımlar sahayı ne sıklıkla değiştirir?",
+      "secenekler": [
+        "Her set sonunda",
+        "Her 7 sayıda bir (üçüncü sette her 5 sayıda)",
+        "Her 8 sayıda bir",
+        "Değiştirmezler"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Plajda güneş ve rüzgâr koşulları eşitlensin diye saha <strong>her 7 sayıda bir</strong> (üçüncü sette her 5 sayıda) değiştirilir. Salonda ise değişim set sonlarında ve tie-break’in 8. sayısındadır."
+    }
+  ]
+}

@@ -7,7 +7,7 @@
   var host = document.getElementById('quizHost');
   if (!host) return;
 
-  var SET_SLUG = 'genel-kural-testi';
+  var SET_SLUG = host.getAttribute('data-set-slug') || 'genel-kural-testi';
   var KEYS = ['A', 'B', 'C', 'D', 'E'];
   var BANTLAR = [
     { min: 0, oran: 0, baslik: 'Isınma turu', metin: 'Temelleri tekrar etmenin tam zamanı. Kurallar sözlüğünü bir tur oku, sonra teste yeniden gir — fark net olacak.' },
@@ -47,8 +47,8 @@
       '<p class="text-dim" style="margin-top:12px;max-width:44ch;margin-inline:auto">' +
       'Testi çözmek için ücretsiz bir hesap yeter. Skorların kaydedilir, sıralamada yerini görürsün.</p>' +
       '<div class="quiz-actions" style="justify-content:center;margin-top:24px">' +
-      '<a class="btn btn-primary" href="/giris/?donus=/quiz/">Giriş yap</a>' +
-      '<a class="btn btn-ghost" href="/kayit/?donus=/quiz/">Kayıt ol</a>' +
+      '<a class="btn btn-primary" href="/giris/?donus=' + encodeURIComponent(location.pathname) + '">Giriş yap</a>' +
+      '<a class="btn btn-ghost" href="/kayit/?donus=' + encodeURIComponent(location.pathname) + '">Kayıt ol</a>' +
       '</div>' +
       '<p class="text-dim" style="margin-top:18px;font-size:14px">Google hesabınla tek tıkla girebilirsin.</p>' +
       '</div>';
@@ -174,7 +174,7 @@
       '<p class="text-dim" style="margin-top:12px;max-width:46ch;margin-inline:auto">' + esc(band.metin) + '</p>' +
       '<p class="text-dim" style="margin-top:10px;font-size:14px">Süre: ' + sureBicimle(sureSn) + ' · Skorun kaydedildi</p>' +
       '<div class="quiz-actions" style="justify-content:center;margin-top:26px">' +
-      '<a class="btn btn-accent" href="/siralama/">Sıralamaya bak</a>' +
+      '<a class="btn btn-accent" href="/siralama/?set=' + SET_SLUG + '">Sıralamaya bak</a>' +
       '<button class="btn btn-ghost" type="button" id="again">Tekrar dene</button>' +
       '<button class="btn btn-primary" type="button" id="share">Sonucu paylaş</button>' +
       '</div>' +
@@ -185,7 +185,7 @@
     document.getElementById('again').addEventListener('click', basla);
     document.getElementById('share').addEventListener('click', function () {
       var text = 'Voleybol kural testinde ' + puan + '/' + toplam + ' yaptım (%' + pct + '). Sen kaç yaparsın?';
-      var url = 'https://voleybolveveleybol.com/quiz/';
+      var url = 'https://voleybolveveleybol.com/testler/' + SET_SLUG + '/';
       if (navigator.share) {
         navigator.share({ title: 'Voleybol Kural Testi', text: text, url: url }).catch(function () {});
       } else if (navigator.clipboard) {

@@ -1,0 +1,157 @@
+{
+  "set": {
+    "slug": "vurus-ve-hucum",
+    "baslik": "Vuruşlar, Hücum ve Blok",
+    "aciklama": "Çift vuruş, tutma, arka bölge hücumu, blok kuralları — hakemlerin en çok çaldığı düdükler.",
+    "kategori": "vurus",
+    "zorluk": 2,
+    "yayinda": true,
+    "goster": 10
+  },
+  "sorular": [
+    {
+      "kaynak_no": 1,
+      "metin": "Bir takım topu karşıya göndermek için en fazla kaç kez vurabilir?",
+      "secenekler": [
+        "2",
+        "3 (blok teması hariç)",
+        "3 (blok teması dahil)",
+        "4"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Üç vuruş hakkı vardır ve <strong>blok teması bu üçe dahil değildir</strong>. Yani blokta topa dokunulduysa takımın hâlâ üç vuruşu kalır. Plaj voleybolunda ise blok teması vuruştan sayılır — en kritik farklardan biri budur."
+    },
+    {
+      "kaynak_no": 2,
+      "metin": "Servis karşılarken top önce kollarına, hemen ardından göğsüne değdi. Ne olur?",
+      "secenekler": [
+        "Çift vuruş, hata",
+        "Tutma, hata",
+        "Hata değil — takımın ilk vuruşunda ardışık temas serbesttir",
+        "Sadece hakem izin verirse geçerli"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Takımın <strong>ilk vuruşunda</strong> (servis karşılama veya hücum kurtarma), tek hareket içinde kalmak şartıyla top vücudun birden fazla bölümüne ardışık değebilir. Bu, çift vuruş kuralının en önemli istisnasıdır."
+    },
+    {
+      "kaynak_no": 3,
+      "metin": "Arka bölge oyuncusu, hücum çizgisine basarak sıçradı ve topa file üst kenarından yukarıdayken vurdu. Karar?",
+      "secenekler": [
+        "Geçerli hücum",
+        "Hata — çizgiye basılamaz",
+        "Sadece 5. sette hata",
+        "Blok varsa hata"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Arka bölge oyuncusu hücum çizgisinin <strong>gerisinden</strong> sıçramalıdır; sıçrama anında çizgiye basmak veya çizgiyi geçmek hatadır. Havadayken saha içine inmesi ise serbesttir."
+    },
+    {
+      "kaynak_no": 4,
+      "metin": "Parmak pasta top oyuncunun elinde bir an durup sonra yönlendirildi. Karar?",
+      "secenekler": [
+        "Hata değil — pas böyle atılır",
+        "Tutma (kaldırma) hatası",
+        "Çift vuruş hatası",
+        "Yalnızca pasör yaptıysa serbest"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Top vuruş anında <strong>temiz sekmelidir</strong>; elde oturması, taşınması veya yavaşlatılıp yönlendirilmesi <em>tutma</em> hatasıdır. Ölçüt temasın anlık olmasıdır."
+    },
+    {
+      "kaynak_no": 5,
+      "metin": "Savunmada topa ayakla vurmak kurallara uygun mudur?",
+      "secenekler": [
+        "Hayır, her zaman hatadır",
+        "Yalnızca libero için serbesttir",
+        "Evet — topa vücudun her yeriyle vurulabilir",
+        "Yalnızca file altındaki toplarda serbesttir"
+      ],
+      "dogru_index": 2,
+      "aciklama": "1990’lardan beri topa <strong>vücudun herhangi bir yeriyle</strong> — ayak dahil — vurulabilir. Kural hangi uzuvla vurulduğuyla değil, temasın niteliğiyle ilgilenir."
+    },
+    {
+      "kaynak_no": 6,
+      "metin": "Takımın üçüncü vuruşundan sonra top hâlâ kendi sahasındaysa ve bir oyuncu dördüncü kez vurursa ne olur?",
+      "secenekler": [
+        "Oyun devam eder",
+        "“Dört vuruş” hatası — sayı rakibin",
+        "Yalnızca aynı oyuncu vurduysa hata",
+        "Hakem tekrar verdirir"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Takımın topu karşıya göndermek için <strong>en fazla üç vuruş</strong> hakkı vardır; dördüncü vuruş hatadır. Tek istisna: blok teması bu üçe sayılmaz."
+    },
+    {
+      "kaynak_no": 7,
+      "metin": "Arka bölge oyuncusu ön bölgedeyken, topun tamamı file üst kenarından yukarıdayken hücum vuruşu yaptı. Karar?",
+      "secenekler": [
+        "Hata değil",
+        "Hata — arka bölge oyuncusu ön bölgede file üstü hücum yapamaz",
+        "Yalnızca pasörse hata",
+        "Top rakip sahaya geçerse serbest"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Arka bölge oyuncusu ön bölgede ancak top file üst kenarının <strong>altındayken</strong> hücum edebilir. File üstünden hücum için hücum çizgisinin gerisinden sıçraması gerekir."
+    },
+    {
+      "kaynak_no": 8,
+      "metin": "Blok yapan oyuncu, bloktan seken topa ilk vuruşu kendisi yapabilir mi?",
+      "secenekler": [
+        "Hayır — çift vuruş olur",
+        "Evet — blok teması vuruştan sayılmaz",
+        "Yalnızca orta oyuncuysa",
+        "Yalnızca top kendi sahasındaysa hata"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Blok teması takımın üç vuruşundan sayılmadığı için <strong>bloktan sonraki ilk vuruşu aynı oyuncu yapabilir</strong> — bu çift vuruş değildir."
+    },
+    {
+      "kaynak_no": 9,
+      "metin": "Blokçu ellerini file üzerinden rakip sahaya uzattı ve rakip hücum vuruşunu yapmadan topa dokundu. Karar?",
+      "secenekler": [
+        "Serbest — eller rakip sahaya geçebilir",
+        "Hata — rakip hücumunu tamamlamadan topa dokunulamaz",
+        "Yalnızca pasa dokunduysa serbest",
+        "File’e değmediyse serbest"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Elleri file üzerinden uzatmak serbesttir; hata, <strong>rakip hücum vuruşunu tamamlamadan topa dokunmaktır</strong>. Rakibin oyun kurmasına müdahale edilemez."
+    },
+    {
+      "kaynak_no": 10,
+      "metin": "Pipe hücumu sahanın neresinden yapılır?",
+      "secenekler": [
+        "4 numaradan, file dibinden",
+        "Orta arkadan (6 numara bölgesi), hücum çizgisinin gerisinden sıçrayarak",
+        "Servis bölgesinden",
+        "Pasörün üstünden kısa topla"
+      ],
+      "dogru_index": 1,
+      "aciklama": "<strong>Pipe</strong>: arka bölge oyuncusunun sahanın ortasından, hücum çizgisinin gerisinden sıçrayarak yaptığı hücumdur. Bloğu ortada meşgul edip kanatlara alan açar."
+    },
+    {
+      "kaynak_no": 11,
+      "metin": "Salon voleybolunda parmak uçlarıyla plase (dink) yapmak serbest midir?",
+      "secenekler": [
+        "Hayır, her zaman hatadır",
+        "Evet — salonda serbesttir; plajda yasaktır",
+        "Yalnızca pasör yapabilir",
+        "Yalnızca file gerisinden serbesttir"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Salonda parmak uçlarıyla kontrollü plase <strong>serbesttir</strong>. Aynı hareket plaj voleybolunda yasaktır — plajda plase yumruk, sert eklem veya avuç içiyle yapılır."
+    },
+    {
+      "kaynak_no": 12,
+      "metin": "\"Okuyan (read) blok\" ne demektir?",
+      "secenekler": [
+        "Hızlı hücumcuyla birlikte sıçramak",
+        "Pasörün elini bekleyip pasın yönüne göre hareket etmek",
+        "Üç blokçunun birlikte sıçraması",
+        "Servise karşı kurulan blok"
+      ],
+      "dogru_index": 1,
+      "aciklama": "<strong>Okuyan blok</strong>: blokçu erken sıçramaz, pasörün elini bekler ve pasın gittiği yöne göre hareket eder. Hızlı hücumcuyla birlikte sıçramak ise <em>kapatan (commit)</em> bloktur."
+    }
+  ]
+}

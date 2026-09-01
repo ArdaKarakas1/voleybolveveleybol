@@ -1,0 +1,133 @@
+{
+  "set": {
+    "slug": "file-ve-sinirlar",
+    "baslik": "File, Çizgiler ve Sınırlar",
+    "aciklama": "File teması, orta çizgi, anten ve iç/dış kararları — en çok karıştırılan bölge.",
+    "kategori": "file",
+    "zorluk": 3,
+    "yayinda": true,
+    "goster": 10
+  },
+  "sorular": [
+    {
+      "kaynak_no": 1,
+      "metin": "Smaç sonrası inerken ayağının bir kısmı orta çizgiye bastı, ama bir kısmı hâlâ çizgi üzerinde. Karar?",
+      "secenekler": [
+        "Hata, rakip sahaya geçildi",
+        "Hata değil",
+        "Hakem uyarı verir",
+        "Rakip oyuncu varsa hata"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Ayağın bir kısmının orta çizgiye basması ya da çizgiyi kısmen geçmesi hata değildir; hata için <strong>ayağın tamamının</strong> rakip sahaya geçmesi gerekir. El ve ayaktan yukarıdaki vücut bölümleri içinse kural farklıdır: rakip sahaya tamamen geçseler bile, <strong>rakibin oyununu engellemedikleri sürece</strong> hata değildir."
+    },
+    {
+      "kaynak_no": 2,
+      "metin": "Smaçtan sonra yere inerken formanın filenin alt kısmına değdi. Karar?",
+      "secenekler": [
+        "Hata değil, sadece üst bant sayılır",
+        "Hata değil, iniş hareket sayılmaz",
+        "Hata — topa oynama hareketi iniş tamamlanana kadar sürer",
+        "Sadece rakip itiraz ederse hata"
+      ],
+      "dogru_index": 2,
+      "aciklama": "Antenler arasındaki file'e, topa oynama hareketi içindeyken yapılan her temas hatadır; <strong>\"sadece üst bant sayılır\" diye bir kural yoktur</strong>. Topa oynama hareketi, oyuncu güvenli şekilde yere inip yeni bir harekete hazır olduğunda biter — yani iniş hâlâ o harekete dahildir. İstisnalar: saç teması (ancak rakibin oyununu etkilediyse hata), antenlerin dışındaki file/direk/halat teması ve topun file'e çarparak rakip oyuncuya değmesi."
+    },
+    {
+      "kaynak_no": 3,
+      "metin": "Top yan çizgiye değerek yere düştü. Karar?",
+      "secenekler": [
+        "Dışarıda — çizgi sınırdır",
+        "İçeride — çizgiler sahaya dahildir",
+        "Ralli tekrarlanır",
+        "Hakemin yorumuna bağlı"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Çizgiler 5 cm genişliğindedir ve <strong>sahaya dahildir</strong>. Topun çizgiye en ufak teması bile sayıyı içeri yazdırır."
+    },
+    {
+      "kaynak_no": 4,
+      "metin": "File altından uzanan el tamamen rakip sahada ama rakibin oyununa müdahale etmiyor. Karar?",
+      "secenekler": [
+        "Hata — el karşıya geçemez",
+        "Hata değil — “tamamen geçerse hata” kuralı yalnızca ayak içindir",
+        "Hata — vücudun hiçbir kısmı geçemez",
+        "Yalnızca topa dokunursa serbest"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Ayağın <strong>tamamen</strong> rakip sahaya geçmesi hatadır; el ve vücudun diğer kısımları için ölçüt <strong>rakibi engelleyip engellemediğidir</strong>. Müdahale yoksa hata yoktur."
+    },
+    {
+      "kaynak_no": 5,
+      "metin": "Takımın ikinci vuruşundan gelen top antenin dışından file düzlemini geçti. 2025–2028 kuralına göre karar?",
+      "secenekler": [
+        "Kurtarılabilir",
+        "Aut — yalnızca ilk vuruştan gelen top antenin dışından kurtarılabilir",
+        "Oyun devam eder",
+        "Servis tekrarlanır"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Yeni kural: antenin dışından taşan top yalnızca takımın <strong>ilk vuruşundan</strong> gelmişse geri kurtarılabilir. İkinci veya üçüncü vuruştan gelen top, antenin dışından file düzlemini geçtiği anda <strong>aut</strong> sayılır."
+    },
+    {
+      "kaynak_no": 6,
+      "metin": "Ralli sırasında oyuncunun saçı file’e değdi. Karar?",
+      "secenekler": [
+        "Her zaman hata",
+        "Rakibin oyununu etkilemediyse hata değil",
+        "Yalnızca üst banda değerse hata",
+        "Servis tekrarlanır"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Saçın file’e teması yalnızca <strong>rakibin topa oynamasını etkilediyse</strong> veya ralliyi kestiyse hatadır. Elin veya formanın topa oynama hareketi sırasında file’e değmesi ise her yükseklikte hatadır."
+    },
+    {
+      "kaynak_no": 7,
+      "metin": "Top rakip sahaya nereden geçmek zorundadır?",
+      "secenekler": [
+        "File üzerinden herhangi bir yerden",
+        "Antenler arasındaki geçiş alanından",
+        "Antenin en fazla 80 cm dışından",
+        "Sadece filenin orta üçte birinden"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Antenler yan çizgilerin üzerine dikilir ve filenin üstünden 80 cm çıkar; top <strong>antenler arasından</strong> geçmek zorundadır. Antene değen top hatadır."
+    },
+    {
+      "kaynak_no": 8,
+      "metin": "File yüksekliği nereden ölçülür ve uçlarda ne kadar fark olabilir?",
+      "secenekler": [
+        "Uçlardan; fark olamaz",
+        "Ortadan; uçlar en fazla 2 cm yüksek olabilir",
+        "Direkten; 5 cm fark olabilir",
+        "Hakem kulesinden; fark önemsizdir"
+      ],
+      "dogru_index": 1,
+      "aciklama": "File yüksekliği <strong>sahanın ortasından</strong> ölçülür. Yan çizgiler üzerindeki iki uç aynı yükseklikte olmalı ve orta noktadan <strong>en fazla 2 cm</strong> yüksek olabilir."
+    },
+    {
+      "kaynak_no": 9,
+      "metin": "Top oyun sırasında filenin antenler DIŞINDAKİ kısmına veya direğe değdi. Karar?",
+      "secenekler": [
+        "Her durumda hata",
+        "Oyunu etkilemediği sürece hata değil; ama top oraya değerse aut",
+        "Servis tekrarlanır",
+        "Yalnızca direk teması hata"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Oyuncunun antenler dışındaki file, direk ve halatlara teması <strong>oyunu etkilemedikçe hata değildir</strong>. <em>Topun</em> antene, direğe veya antenler dışındaki file kısmına değmesi ise <strong>aut</strong>tur."
+    },
+    {
+      "kaynak_no": 10,
+      "metin": "Oyun alanının üzerinde en az kaç metre engelsiz yükseklik olmalıdır?",
+      "secenekler": [
+        "5 m",
+        "7 m",
+        "9 m",
+        "12,5 m"
+      ],
+      "dogru_index": 1,
+      "aciklama": "Oyun alanının üzerinde <strong>en az 7 m</strong> engelsiz yükseklik gerekir. Uluslararası salonlarda bu değer daha yüksektir; tavana değen top sahaya göre değerlendirilir — kendi tarafında oyun sürebilir, rakip alan üstünde auttur."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+// Set kartları derlemede repo verisinden basılır (SEO + hızlı ilk boya);
+// üyenin en iyi skorları sayfa açılınca /api/setler ile eklenir.
+const KLASOR = join(process.cwd(), 'db/sorular');
+const setler = readdirSync(KLASOR)
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => {
+    const v = JSON.parse(readFileSync(join(KLASOR, f), 'utf8'));
+    return { ...v.set, havuz: v.sorular.length, soru: Math.min(v.set.goster ?? v.sorular.length, v.sorular.length) };
+  })
+  .filter((s) => s.yayinda)
+  .sort((a, b) => a.zorluk - b.zorluk || a.baslik.localeCompare(b.baslik, 'tr'));
+
+const ZORLUK = ['', 'Başlangıç', 'Orta', 'İleri'];
+---
+<Base
+  title="Kural Testleri — konu konu çöz, skorunu yükselt | Voleybol ve Veleybol"
+  description="Voleybol kural testleri: temel oyun, servis, vuruşlar, file, libero ve maç yönetimi. Her set sunucuda puanlanır; en iyi skorların sıralamaya işlenir."
+  path="/testler/"
+  active="testler"
+  scripts={['/assets/js/testler.js']}
+>
+<main id="main" class="section">
+  <div class="shell" style="max-width:980px">
+    <div class="center" style="margin-bottom:34px">
+      <span class="eyebrow">{setler.length} set · {setler.reduce((t, s) => t + s.havuz, 0)} soru havuzu</span>
+      <h1 style="font-size:var(--step-4);margin-top:16px">Kural Testleri</h1>
+      <p class="text-dim" style="margin-top:14px;max-width:56ch;margin-inline:auto">
+        Konu konu çöz; her setteki <strong>en iyi skorun</strong> genel sıralamana eklenir.
+        Sorular her denemede havuzdan yeniden seçilir.
+      </p>
+    </div>
+
+    <div class="set-izgara">
+      {setler.map((s) => (
+        <a class="set-kart panel" href={`/testler/${s.slug}/`} data-set-slug={s.slug}>
+          <div class="set-ust">
+            <span class="set-zorluk" data-zorluk={s.zorluk}>{ZORLUK[s.zorluk]}</span>
+            <span class="set-skor" data-set-skor hidden></span>
+          </div>
+          <h2>{s.baslik}</h2>
+          <p class="text-dim">{s.aciklama}</p>
+          <div class="set-alt">
+            <span>{s.soru} soru · ~{s.soru} dk</span>
+            <span class="set-basla">Başla →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="center" style="margin-top:30px">
+      <a class="btn btn-ghost" href="/siralama/">Sıralamayı gör</a>
+    </div>
+  </div>
+</main>
+</Base>

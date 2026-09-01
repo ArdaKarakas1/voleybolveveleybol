@@ -1,8 +1,8 @@
 {
   "set": {
     "slug": "genel-kural-testi",
-    "baslik": "Voleybol Kural Testi",
-    "aciklama": "Temel kurallardan liberoya, servisten plaj voleybolu farklarına genel tarama.",
+    "baslik": "Genel Tarama",
+    "aciklama": "Tüm konulardan karışık 14 soru — kendini genel olarak tart.",
     "kategori": "genel",
     "zorluk": 1,
     "yayinda": true,

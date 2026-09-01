@@ -41,7 +41,7 @@
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (d) {
         if (!d.gecmis.length) {
-          kutu.innerHTML = '<p class="text-dim">Henüz tamamlanmış testin yok. <a href="/quiz/">İlkini çöz</a> — skorun burada ve sıralamada görünsün.</p>';
+          kutu.innerHTML = '<p class="text-dim">Henüz tamamlanmış testin yok. <a href="/testler/">İlkini çöz</a> — skorun burada ve sıralamada görünsün.</p>';
           return;
         }
         var enIyi = d.en_iyi;

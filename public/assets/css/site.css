@@ -629,3 +629,26 @@ mark { background: color-mix(in srgb, var(--orange) 35%, transparent); color: in
 /* Cevap gönderilirken seçilen şık */
 .quiz-opt.bekliyor { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 .quiz-opt.bekliyor .key { animation: pulse 0.9s ease-in-out infinite; }
+
+/* Test seti kartları */
+.set-izgara { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.set-kart { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; transition: transform .16s, box-shadow .2s, border-color .2s; }
+.set-kart:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+.set-kart h2 { font-size: var(--step-1); }
+.set-kart p { font-size: var(--step--1); flex: 1; }
+.set-ust { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.set-zorluk { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); color: var(--text-dim); }
+.set-zorluk[data-zorluk="2"] { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
+.set-zorluk[data-zorluk="3"] { background: var(--navy); color: var(--cream); }
+:root[data-theme="dark"] .set-zorluk[data-zorluk="3"] { background: var(--cream); color: var(--navy); }
+.set-skor { font-size: 12px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+.set-alt { display: flex; justify-content: space-between; align-items: center; font-size: var(--step--1); color: var(--text-mute); margin-top: 4px; }
+.set-basla { color: var(--accent); font-weight: 700; }
+
+/* Sayfalar arası yumuşak geçiş (destekleyen tarayıcılarda) */
+@media not (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: auto; }
+}
+
+/* Sıralama set filtresi */
+.siralama-filtre { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 22px; }

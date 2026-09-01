@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+export function getStaticPaths() {
+  const KLASOR = join(process.cwd(), 'db/sorular');
+  return readdirSync(KLASOR)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(readFileSync(join(KLASOR, f), 'utf8')))
+    .filter((v) => v.set.yayinda)
+    .map((v) => ({
+      params: { slug: v.set.slug },
+      props: {
+        set: v.set,
+        soru: Math.min(v.set.goster ?? v.sorular.length, v.sorular.length),
+        havuz: v.sorular.length
+      }
+    }));
+}
+
+const { set, soru, havuz } = Astro.props;
+const ZORLUK = ['', 'Başlangıç', 'Orta', 'İleri'];
+---
+<Base
+  title={`${set.baslik} — ${soru} soruluk kural testi | Voleybol ve Veleybol`}
+  description={`${set.aciklama} ${soru} soru, ${havuz} soruluk havuzdan; her cevaptan sonra açıklama. En iyi skorun sıralamaya işlenir.`}
+  path={`/testler/${set.slug}/`}
+  active="testler"
+  scripts={['/assets/js/quiz.js']}
+>
+<main id="main">
+  <section class="section">
+    <div class="shell">
+      <div class="center" style="max-width:640px;margin-inline:auto;margin-bottom:34px">
+        <span class="eyebrow">{ZORLUK[set.zorluk]} · {soru} soru · ~{soru} dakika</span>
+        <h1 style="font-size:var(--step-4);margin-top:16px">{set.baslik}</h1>
+        <p class="text-dim" style="margin-top:14px;font-size:var(--step-1)">{set.aciklama}</p>
+      </div>
+      <div class="panel quiz-card" id="quizHost" data-set-slug={set.slug}>
+        <div class="empty">Test yükleniyor…</div>
+      </div>
+      <p class="center text-dim" style="margin-top:18px;font-size:14px">
+        <a class="link-more" href="/testler/">← Tüm testler</a>
+      </p>
+    </div>
+  </section>
+</main>
+</Base>
