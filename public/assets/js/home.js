@@ -42,7 +42,7 @@
       'href="https://www.youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" ' +
       'aria-label="' + esc(v.title) + ' — YouTube\'da izle">' +
       '<img src="' + esc(v.thumb) + '" alt="" loading="' + (opts.hero ? 'eager' : 'lazy') + '" decoding="async" width="480" height="270" ' +
-      'onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/' + esc(v.id) + '/hqdefault.jpg\'">' +
+      'data-vid="' + esc(v.id) + '">' +
       (chip ? '<span class="' + chipClass + '">' + esc(chip) + '</span>' : '') +
       '<span class="play">' + PLAY_ICON + '</span>' +
       '<span class="body"><span class="title">' + esc(v.title) + '</span>' +
@@ -82,6 +82,18 @@
     if (window.VVV && window.VVV.reveal) window.VVV.reveal(railsHost);
   }
 
+  /* Küçük resim yedeği: maxres bulunamazsa hqdefault'a düş.
+     CSP satır içi onerror'a izin vermediği için dinleyiciyle bağlanır. */
+  function resimYedegiBagla(kok) {
+    kok.querySelectorAll('img[data-vid]').forEach(function (img) {
+      img.addEventListener('error', function () {
+        var vid = img.getAttribute('data-vid');
+        img.removeAttribute('data-vid'); // ikinci hata döngü yaratmasın
+        if (vid) img.src = 'https://i.ytimg.com/vi/' + vid + '/hqdefault.jpg';
+      }, { once: true });
+    });
+  }
+
   function render(data) {
     if (!data || !data.videos || !data.videos.length) {
       featured.innerHTML = '<div class="panel center" style="grid-column:1/-1">' +
@@ -92,6 +104,8 @@
     }
     renderFeatured(data.videos);
     renderRails(data);
+    resimYedegiBagla(featured);
+    resimYedegiBagla(railsHost);
   }
 
   fetch('/api/videos')

@@ -43,7 +43,7 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     # Satır içi script yok (JSON-LD veri bloğu çalıştırılmaz, etkilenmez);
     # style 'unsafe-inline': sayfalarda style="" nitelikleri kullanılıyor.
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://i.ytimg.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; manifest-src 'self'; upgrade-insecure-requests"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://*.ytimg.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; manifest-src 'self'; upgrade-insecure-requests"
 
 [[headers]]
   for = "/assets/*"
