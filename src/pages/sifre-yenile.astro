@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Yeni parola belirle | Voleybol ve Veleybol"
+  path="/sifre-yenile/"
+  robots="noindex, nofollow"
+  scripts={['/assets/js/sifre.js']}
+>
+<main id="main" class="section" style="min-height:70vh;display:grid;place-items:center">
+  <div class="shell" style="max-width:440px">
+    <div class="center" style="margin-bottom:28px">
+      <span class="eyebrow">Son adım</span>
+      <h1 style="font-size:var(--step-3);margin-top:14px">Yeni parolanı belirle</h1>
+    </div>
+    <div class="panel">
+      <form class="form-dizi" data-sifre-form="yenile" novalidate>
+        <div class="form-hata" id="formHata" role="alert"></div>
+        <div class="form-alan">
+          <label for="parola">Yeni parola</label>
+          <input id="parola" name="parola" type="password" autocomplete="new-password" required minlength="10" autofocus />
+          <span class="ipucu">En az 10 karakter. Diğer tüm cihazlardaki oturumların güvenlik için kapatılacak.</span>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Parolayı değiştir ve giriş yap</button>
+      </form>
+    </div>
+  </div>
+</main>
+</Base>

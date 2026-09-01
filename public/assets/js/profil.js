@@ -17,8 +17,32 @@
       document.getElementById('pKullanici').textContent = u.kullanici_adi;
       document.getElementById('pEposta').textContent = u.eposta;
       document.getElementById('pTarih').textContent = tarih;
-      document.getElementById('pDogrulama').textContent = u.dogrulandi
-        ? 'Doğrulandı' : 'Doğrulanmadı — doğrulama e-postası yakında geliyor; şimdilik testleri etkilemez';
+      var dg = document.getElementById('pDogrulama');
+      if (u.dogrulandi) {
+        dg.textContent = 'Doğrulandı ✓';
+      } else {
+        dg.innerHTML = 'Doğrulanmadı — sıralamada görünmek için ' +
+          '<button class="link-dugme" type="button" id="dogrulamaBtn">doğrulama e-postası gönder</button>';
+        var btn = document.getElementById('dogrulamaBtn');
+        btn.addEventListener('click', function () {
+          btn.disabled = true; btn.textContent = 'gönderiliyor…';
+          fetch('/api/dogrulama-gonder', { method: 'POST' })
+            .then(function (r) { return r.json().then(function (j) { return { durum: r.status, j: j }; }); })
+            .then(function (s) {
+              if (s.durum === 200) { dg.textContent = 'Doğrulama e-postası gönderildi — gelen kutunu (ve spam klasörünü) kontrol et.'; return; }
+              btn.disabled = false; btn.textContent = 'doğrulama e-postası gönder';
+              dg.insertAdjacentText('beforeend', ' · ' + (s.durum === 503
+                ? 'E-posta gönderimi henüz etkin değil.'
+                : (s.j.hata || 'Gönderilemedi, tekrar dene.')));
+            })
+            .catch(function () { btn.disabled = false; btn.textContent = 'doğrulama e-postası gönder'; });
+        });
+      }
+
+      // /api/eposta-dogrula yönlendirmesinden gelen sonuç mesajı
+      var dq = new URLSearchParams(location.search).get('dogrulama');
+      if (dq === 'tamam') dg.textContent = 'Doğrulandı ✓ — sıralamadasın!';
+      else if (dq === 'gecersiz') dg.insertAdjacentText('beforeend', ' · Bağlantı geçersiz veya süresi dolmuş; yenisini iste.');
       kart.hidden = false;
       document.getElementById('profilYukleniyor').hidden = true;
       skorlariYukle();
@@ -58,6 +82,41 @@
       .catch(function () {
         kutu.innerHTML = '<p class="text-dim">Skor geçmişi yüklenemedi.</p>';
       });
+  }
+
+  /* ---------- hesap silme ---------- */
+  var silBaslat = document.getElementById('silBaslat');
+  var silForm = document.getElementById('silForm');
+  if (silBaslat && silForm) {
+    silBaslat.addEventListener('click', function () {
+      silBaslat.hidden = true;
+      silForm.hidden = false;
+      document.getElementById('silOnay').focus();
+    });
+    silForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var hata = document.getElementById('silHata');
+      hata.classList.remove('gorunur');
+      var dugme = silForm.querySelector('button[type="submit"]');
+      dugme.disabled = true; dugme.textContent = 'Siliniyor…';
+      fetch('/api/hesap-sil', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ onay: document.getElementById('silOnay').value })
+      })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (s) {
+          if (s.ok) { location.assign('/'); return; }
+          hata.textContent = s.j.hata || 'Silinemedi, tekrar dene.';
+          hata.classList.add('gorunur');
+          dugme.disabled = false; dugme.textContent = 'Hesabı kalıcı olarak sil';
+        })
+        .catch(function () {
+          hata.textContent = 'Sunucuya ulaşılamadı.';
+          hata.classList.add('gorunur');
+          dugme.disabled = false; dugme.textContent = 'Hesabı kalıcı olarak sil';
+        });
+    });
   }
 
   document.getElementById('cikisBtn').addEventListener('click', function () {

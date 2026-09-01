@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Parolamı unuttum | Voleybol ve Veleybol"
+  path="/sifre-unuttum/"
+  robots="noindex, nofollow"
+  scripts={['/assets/js/sifre.js']}
+>
+<main id="main" class="section" style="min-height:70vh;display:grid;place-items:center">
+  <div class="shell" style="max-width:440px">
+    <div class="center" style="margin-bottom:28px">
+      <span class="eyebrow">Olur böyle şeyler</span>
+      <h1 style="font-size:var(--step-3);margin-top:14px">Parolanı sıfırla</h1>
+      <p class="text-dim" style="margin-top:10px">Kayıtlı e-postana tek kullanımlık bir bağlantı gönderelim.</p>
+    </div>
+    <div class="panel">
+      <form class="form-dizi" data-sifre-form="unuttum" novalidate>
+        <div class="form-hata" id="formHata" role="alert"></div>
+        <div class="form-alan">
+          <label for="eposta">E-posta</label>
+          <input id="eposta" name="eposta" type="email" autocomplete="email" required autofocus />
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Sıfırlama bağlantısı gönder</button>
+        <p class="form-alt"><a href="/giris/">← Girişe dön</a> · Google ile mi kaydolmuştun? Parolan yok — <a href="/giris/">Google ile gir</a>.</p>
+      </form>
+    </div>
+  </div>
+</main>
+</Base>

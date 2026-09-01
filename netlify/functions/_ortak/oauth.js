@@ -100,8 +100,8 @@ export async function uyeBulVeyaOlustur(sql, { kimlik, eposta, epostaDogrulandi 
       : (taban.slice(0, 18) + '_' + crypto.randomInt(100, 9999)).slice(0, 24);
     try {
       const [uye] = await sql`
-        INSERT INTO uyeler (eposta, kullanici_adi, google_id, dogrulandi)
-        VALUES (${eposta.toLowerCase()}, ${ad}, ${kimlik}, ${!!epostaDogrulandi})
+        INSERT INTO uyeler (eposta, kullanici_adi, google_id, dogrulandi, kvkk_onayi)
+        VALUES (${eposta.toLowerCase()}, ${ad}, ${kimlik}, ${!!epostaDogrulandi}, now())
         RETURNING id, eposta, kullanici_adi, dogrulandi`;
       return uye;
     } catch (e) {

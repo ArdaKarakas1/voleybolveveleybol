@@ -26,6 +26,8 @@ export async function handler(event) {
     return K.yanit(400, { hata: 'Kullanıcı adı 3–24 karakter olmalı; yalnızca küçük harf, rakam ve alt çizgi.', alan: 'kullanici_adi' });
   if (parola.length < 10 || parola.length > 200)
     return K.yanit(400, { hata: 'Parola en az 10 karakter olmalı.', alan: 'parola' });
+  if (govde.kvkk_onay !== true)
+    return K.yanit(400, { hata: 'Devam etmek için aydınlatma metnini onaylamalısın.', alan: 'kvkk_onay' });
 
   try {
     const sql = veritabani();
@@ -39,8 +41,8 @@ export async function handler(event) {
     let uye;
     try {
       [uye] = await sql`
-        INSERT INTO uyeler (eposta, kullanici_adi, parola_hash)
-        VALUES (${eposta}, ${kullaniciAdi}, ${parolaHash})
+        INSERT INTO uyeler (eposta, kullanici_adi, parola_hash, kvkk_onayi)
+        VALUES (${eposta}, ${kullaniciAdi}, ${parolaHash}, now())
         RETURNING id, eposta, kullanici_adi, dogrulandi, olusturuldu`;
     } catch (e) {
       if (e.code === '23505') {

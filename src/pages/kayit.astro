@@ -36,6 +36,10 @@ import GoogleGiris from '../components/GoogleGiris.astro';
           <input id="parola" name="parola" type="password" autocomplete="new-password" required minlength="10" />
           <span class="ipucu">En az 10 karakter. Uzun bir cümle, karmaşık kısaltmadan iyidir.</span>
         </div>
+        <label class="onay-kutusu">
+          <input type="checkbox" name="kvkk_onay" required />
+          <span>13 yaşından büyüğüm; <a href="/kvkk/" target="_blank">aydınlatma metnini</a> okudum ve kabul ediyorum.</span>
+        </label>
         <button class="btn btn-primary" type="submit" style="width:100%">Hesap aç</button>
         <GoogleGiris />
         <p class="form-alt">Zaten üye misin? <a href="/giris/">Giriş yap</a></p>

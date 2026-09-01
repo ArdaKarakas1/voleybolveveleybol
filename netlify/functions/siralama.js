@@ -8,6 +8,11 @@
  */
 import { veritabani } from './_ortak/db.js';
 import * as K from './_ortak/kimlik.js';
+import { epostaAktif } from './_ortak/eposta.js';
+
+// Doğrulama e-postası gönderilebiliyorsa sıralamaya yalnızca doğrulanmış
+// hesaplar girer (sahte hesap freni). Servis kapalıyken filtre uygulanmaz —
+// yoksa parola kullanıcıları doğrulanma imkânı olmadan tablodan düşerdi.
 
 const TTL = 1000 * 10; // 10 sn — skorlar tabloya neredeyse aninda yansisin
 const CACHE = new Map(); // set → { at, veri }
@@ -33,6 +38,7 @@ export async function handler(event) {
               JOIN uyeler u ON u.id = d.uye_id
               JOIN setler s ON s.id = d.set_id
               WHERE d.durum = 'tamamlandi' AND s.slug = ${set}
+                AND (u.dogrulandi OR NOT ${epostaAktif()})
               ORDER BY d.uye_id, d.puan DESC, d.sure_sn ASC, d.bitti ASC
             ) en_iyiler
             ORDER BY puan DESC, sure_sn ASC, bitti ASC
@@ -47,6 +53,7 @@ export async function handler(event) {
                 d.uye_id, u.kullanici_adi, d.puan, d.toplam, d.sure_sn, d.bitti
               FROM denemeler d JOIN uyeler u ON u.id = d.uye_id
               WHERE d.durum = 'tamamlandi'
+                AND (u.dogrulandi OR NOT ${epostaAktif()})
               ORDER BY d.uye_id, d.set_id, d.puan DESC, d.sure_sn ASC, d.bitti ASC
             ) set_bazli
             GROUP BY uye_id, kullanici_adi

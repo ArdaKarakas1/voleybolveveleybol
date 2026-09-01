@@ -53,6 +53,7 @@
     new FormData(form).forEach(function (v, k) { veri[k] = v; });
     if (veri.kullanici_adi) veri.kullanici_adi = veri.kullanici_adi.trim().toLowerCase();
     if (veri.eposta) veri.eposta = veri.eposta.trim().toLowerCase();
+    if ('kvkk_onay' in veri) veri.kvkk_onay = true; // isaretliyse FormData'da "on" olarak gelir
 
     dugme.disabled = true;
     var eskiMetin = dugme.textContent;

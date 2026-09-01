@@ -38,6 +38,20 @@ import Base from '../layouts/Base.astro';
         <label>Skor geçmişi</label>
         <div id="skorGecmisi"><p class="text-dim">Yükleniyor…</p></div>
       </div>
+
+      <div class="tehlike-alani">
+        <h3>Hesabı sil</h3>
+        <p class="text-dim">Hesabın, test geçmişin ve sıralamadaki yerin <strong>kalıcı olarak</strong> silinir. Geri dönüşü yoktur.</p>
+        <button class="btn btn-ghost" type="button" id="silBaslat">Hesabımı silmek istiyorum</button>
+        <form class="form-dizi" id="silForm" hidden>
+          <div class="form-hata" id="silHata" role="alert"></div>
+          <div class="form-alan">
+            <label for="silOnay">Onaylamak için kullanıcı adını yaz</label>
+            <input id="silOnay" name="onay" type="text" autocomplete="off" spellcheck="false" />
+          </div>
+          <button class="btn btn-tehlike" type="submit">Hesabı kalıcı olarak sil</button>
+        </form>
+      </div>
     </div>
   </div>
 </main>
