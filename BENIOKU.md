@@ -1,36 +1,76 @@
 # Voleybol ve Veleybol — site kılavuzu
 
-Bu klasör sitenin tamamı. Netlify'a olduğu gibi yükle, çalışır.
+Bu klasör sitenin tamamı. Astro ile derlenir, GitHub'a push edilince Netlify
+otomatik yayınlar.
 
 ## Dosya yapısı
 
 ```
-index.html              Ana sayfa
-kurallar/index.html     Kurallar sözlüğü (aranabilir)
-quiz/index.html         Kural testi
-404.html                Bulunamayan sayfa
+src/pages/index.astro          Ana sayfa
+src/pages/kurallar/index.astro Kurallar sözlüğü (aranabilir)
+src/pages/quiz/index.astro     Kural testi
+src/pages/404.astro            Bulunamayan sayfa
+src/layouts/Base.astro         Ortak iskelet: head etiketleri, tema, sayfa çatısı
+src/components/SiteHeader.astro  Üst menü (aktif bağlantı `active` ile verilir)
+src/components/SiteFooter.astro  Alt bilgi (değişken sütun `links` ile verilir)
 
-assets/css/site.css     Tüm tasarım (renk, tipografi, düzen)
-assets/js/site.js       Ortak: tema, menü, canlı sayaçlar
-assets/js/home.js       Ana sayfadaki video rafları
-assets/js/kurallar.js   Kural arama ve filtreleme
-assets/js/quiz.js       Test akışı
-assets/img/             Logo türevleri + og.jpg (paylaşım görseli)
+public/assets/css/site.css     Tüm tasarım (renk, tipografi, düzen)
+public/assets/js/site.js       Ortak: tema, menü, canlı sayaçlar
+public/assets/js/home.js       Ana sayfadaki video rafları
+public/assets/js/kurallar.js   Kural arama ve filtreleme
+public/assets/js/quiz.js       Test akışı
+public/assets/img/             Logo türevleri + og.jpg (paylaşım görseli)
 
-data/kurallar.json      53 kural maddesi — içerik burada
-data/quiz.json          14 test sorusu
-data/videos-fallback.json  Sunucu çökerse gösterilecek yedek video listesi
+public/data/kurallar.json      53 kural maddesi — içerik burada
+public/data/quiz.json          14 test sorusu
+public/data/videos-fallback.json  Sunucu çökerse gösterilecek yedek video listesi
 
-netlify/functions/videos.js  YouTube RSS → kategorili video listesi
-netlify/functions/stats.js   Canlı takipçi sayıları
-netlify.toml            Yönlendirme, önbellek ve güvenlik başlıkları
+netlify/functions/videos.js    YouTube RSS → kategorili video listesi
+netlify/functions/stats.js     Canlı takipçi sayıları
+netlify.toml                   Derleme, yönlendirme, önbellek ve güvenlik başlıkları
+astro.config.mjs               Astro ayarları
+dist/                          Derleme çıktısı — git'e girmez, elle düzenlenmez
 ```
 
-## Kurulum
+`public/` altındaki her şey siteye olduğu gibi kopyalanır. `src/` altındakiler
+derlenir. Yayınlanan klasör `dist/`.
 
-Netlify'da site zaten bağlıysa dosyaları değiştirip push etmen yeterli.
-Sıfırdan kuruyorsan: Netlify → Add new site → bu klasörü sürükle-bırak.
-`netlify.toml` gerisini halleder.
+## Çalıştırma
+
+```
+npm install        Bir kez, bağımlılıklar için
+npm run dev        Yerel geliştirme sunucusu (localhost:4321, anında yenilenir)
+npm run build      dist/ üretir
+npm run preview    dist/ içeriğini yerelde servis eder
+```
+
+`npm run dev` sırasında `/api/*` uçları çalışmaz — o istekler 404 döner ve
+sayfa yedek değerlere düşer. Bu beklenen davranış; canlıda fonksiyonlar devrede.
+
+## Yayınlama
+
+```
+.\yayinla.ps1 "ne degistirdigini yaz"
+```
+
+Bu betik değişiklikleri commit'leyip push eder; Netlify derlemeyi kendisi yapar.
+**Netlify paneline sürükle-bırak ile deploy etme** — Git bağlantısını koparır.
+
+## Yeni sayfa eklemek
+
+`src/pages/` altına bir `.astro` dosyası koy, `Base` şablonunu kullan:
+
+```astro
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Sayfa başlığı" description="..." path="/adres/" active="menuAnahtari">
+  <main id="main">…</main>
+</Base>
+```
+
+Dosya yolu adres olur: `src/pages/siralama/index.astro` → `/siralama/`.
+Header ve footer kendiliğinden gelir.
 
 ## Videolar nasıl güncelleniyor?
 

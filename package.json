@@ -1,0 +1,16 @@
+{
+  "name": "voleybolveveleybol",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "voleybolveveleybol.com — voleybol kuralları, teknik anlatımlar ve kural testleri",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "devDependencies": {
+    "astro": "^5.14.1"
+  }
+}

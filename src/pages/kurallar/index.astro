@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const jsonLd = `
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Ana sayfa", "item": "https://voleybolveveleybol.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Voleybol Kuralları", "item": "https://voleybolveveleybol.com/kurallar/" }
+  ]
+}
+`;
+
+const footerLinks = {
+  title: 'Popüler kurallar',
+  items: [
+    { href: '/kurallar/#rotasyon', label: 'Rotasyon nasıl işler?' },
+    { href: '/kurallar/#cift-vurus', label: 'Çift vuruş nedir?' },
+    { href: '/kurallar/#libero-yasaklar', label: 'Libero neleri yapamaz?' },
+    { href: '/kurallar/#plaj-farklar', label: 'Plaj voleybolu farkları' }
+  ]
+};
+---
+<Base
+  title="Voleybol Kuralları Sözlüğü — aranabilir, Türkçe | Voleybol ve Veleybol"
+  description="Voleybol kuralları tek sayfada: kaç sayı, rotasyon, çift vuruş, libero, blok, servis, file teması, plaj voleybolu farkları ve terimler sözlüğü. Ara, bul, sahada kullan."
+  path="/kurallar/"
+  ogType="article"
+  ogTitle="Voleybol Kuralları Sözlüğü — aranabilir, Türkçe"
+  ogDescription="Rotasyondan liberoya, çift vuruştan plaj voleybolu farklarına kadar bütün kurallar tek sayfada."
+  active="kurallar"
+  scripts={['/assets/js/kurallar.js']}
+  footerLinks={footerLinks}
+>
+  <script type="application/ld+json" slot="head" set:html={jsonLd} />
+
+<main id="main">
+  <section class="section" style="padding-bottom:26px">
+    <div class="shell">
+      <span class="eyebrow">Referans</span>
+      <h1 style="font-size:var(--step-4);margin-top:16px">Voleybol Kuralları Sözlüğü</h1>
+      <p class="hero-lede" style="margin-top:14px">
+        Sahada aklına takılan her şey burada. Ara, kategoriden seç, cevabı oku.
+        Kural bilgileri <strong>FIVB 2025–2028</strong> resmî oyun kurallarına dayanır — 2025 sezonundaki değişiklikler dahil.
+      </p>
+      <div class="searchbox" style="margin-top:26px;max-width:620px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input id="ruleSearch" type="search" placeholder="Ara: rotasyon, libero, çift vuruş, kaç sayı…" aria-label="Kurallarda ara" autocomplete="off">
+      </div>
+      <p class="text-dim" style="margin-top:12px;font-size:14px" id="ruleCount"></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="shell rules-layout">
+      <aside class="rules-side">
+        <h2 class="sr-only">Kategoriler</h2>
+        <div class="cat-list" id="ruleCats" role="tablist" aria-label="Kural kategorileri"></div>
+      </aside>
+      <div>
+        <div id="ruleList"><div class="empty">Kurallar yükleniyor…</div></div>
+
+        <div class="promo" style="margin-top:32px">
+          <h3>Aradığını bulamadın mı?</h3>
+          <p>Sorunu YouTube'da yorum olarak yaz — sık gelen soruları videoya çeviriyorum ve buraya ekliyorum.</p>
+          <a class="btn btn-primary" href="https://www.youtube.com/@voleybolveveleybol" target="_blank" rel="noopener">Kanala sor</a>
+        </div>
+
+        <div class="panel center" style="margin-top:16px">
+          <p style="font-family:var(--font-display);font-size:var(--step-2);font-weight:800">Kuralları biliyor musun, emin misin?</p>
+          <p class="text-dim" style="margin-top:8px">14 soruluk kural testiyle kendini dene.</p>
+          <a class="btn btn-accent" style="margin-top:16px" href="/quiz/">Teste başla</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</Base>

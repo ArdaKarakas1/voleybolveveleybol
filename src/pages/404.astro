@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Sayfa bulunamadı — Voleybol ve Veleybol"
+  path="/404"
+  robots="noindex"
+  chrome={false}
+>
+<main id="main" class="section" style="min-height:70vh;display:grid;place-items:center">
+  <div class="shell center" style="max-width:520px">
+    <img src="/assets/img/logo-256.webp" alt="" width="120" height="120" style="border-radius:50%;margin:0 auto 24px;border:3px solid var(--navy)" />
+    <span class="eyebrow">Aut</span>
+    <h1 style="font-size:var(--step-4);margin-top:16px">Top çizginin dışına düştü</h1>
+    <p class="text-dim" style="margin-top:14px">Aradığın sayfa burada değil. Sahaya geri dönelim.</p>
+    <div class="hero-cta" style="justify-content:center;margin-top:26px">
+      <a class="btn btn-primary" href="/">Ana sayfaya dön</a>
+      <a class="btn btn-ghost" href="/kurallar/">Kuralları aç</a>
+    </div>
+  </div>
+</main>
+</Base>

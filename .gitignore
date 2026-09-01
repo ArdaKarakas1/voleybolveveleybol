@@ -13,3 +13,9 @@ desktop.ini
 .DS_Store
 # Yerel yardimci betikler (siteye yayinlanmasin)
 yayinla.ps1
+# Astro
+dist/
+.astro/
+
+# Claude Code yerel ayarlari
+.claude/settings.local.json

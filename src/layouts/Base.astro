@@ -1,0 +1,81 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+/**
+ * Tüm sayfaların ortak iskeleti: head etiketleri, tema, header, footer.
+ * Sayfaya özel head içeriği (JSON-LD gibi) `head` slotundan geçirilir.
+ */
+const {
+  title,
+  description = '',
+  path = '/',
+  ogType = 'website',
+  ogTitle,
+  ogDescription,
+  robots = 'index, follow, max-image-preview:large',
+  active = '',
+  footerLinks,
+  scripts = [],
+  preconnect = [],
+  preload,
+  chrome = true
+} = Astro.props;
+
+const site = Astro.site ?? new URL('https://voleybolveveleybol.com');
+const canonical = new URL(path, site).href;
+const ogImage = new URL('/assets/img/og.jpg', site).href;
+---
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+<meta name="theme-color" content="#FEF6E5" />
+<link rel="canonical" href={canonical} />
+<meta name="author" content="Voleybol ve Veleybol" />
+<meta name="robots" content={robots} />
+
+<meta property="og:type" content={ogType} />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:site_name" content="Voleybol ve Veleybol" />
+<meta property="og:title" content={ogTitle ?? title} />
+<meta property="og:description" content={ogDescription ?? description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={ogTitle ?? title} />
+<meta name="twitter:description" content={ogDescription ?? description} />
+<meta name="twitter:image" content={ogImage} />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/assets/img/logo-192.png" type="image/png" />
+<link rel="apple-touch-icon" href="/assets/img/logo-180.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+{preconnect.map((href) => <link rel="preconnect" href={href} />)}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="/assets/css/site.css" />
+{preload && <link rel="preload" as="image" href={preload} />}
+
+<slot name="head" />
+</head>
+<body class="court-bg">
+<a class="skip" href="#main">İçeriğe geç</a>
+
+{chrome && <SiteHeader active={active} />}
+
+<slot />
+
+{chrome && <SiteFooter links={footerLinks} />}
+
+<script src="/assets/js/site.js" defer></script>
+{scripts.map((src) => <script src={src} defer></script>)}
+</body>
+</html>

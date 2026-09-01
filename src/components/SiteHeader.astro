@@ -1,0 +1,58 @@
+---
+/**
+ * Üst menü. Tek fark eden şey aktif bağlantı; onu `active` ile veriyoruz.
+ * Bölüm bağlantıları her sayfada "/#bolum" biçiminde — ana sayfadayken de
+ * doğru çalışır, alt sayfalardan da ana sayfaya götürür.
+ */
+const { active = '' } = Astro.props;
+
+const NAV = [
+  { key: 'home', href: '/', label: 'Ana Sayfa' },
+  { key: 'anlatim', href: '/#anlatim', label: 'Anlatımlar' },
+  { key: 'analiz', href: '/#analiz', label: 'Maç Analizi' },
+  { key: 'kurallar', href: '/kurallar/', label: 'Kurallar' },
+  { key: 'quiz', href: '/quiz/', label: 'Kural Testi' },
+  { key: 'iletisim', href: '/#iletisim', label: 'İletişim' }
+];
+
+const MOBIL = [
+  { key: 'home', href: '/', label: 'Ana Sayfa' },
+  { key: 'anlatim', href: '/#anlatim', label: 'Voleybol Anlatımları' },
+  { key: 'analiz', href: '/#analiz', label: 'Maç Analizi & Haber' },
+  { key: 'eglence', href: '/#eglence', label: 'Eğlence & Shorts' },
+  { key: 'kurallar', href: '/kurallar/', label: 'Kurallar Sözlüğü' },
+  { key: 'quiz', href: '/quiz/', label: 'Kural Testi' },
+  { key: 'iletisim', href: '/#iletisim', label: 'İletişim & İş Birliği' }
+];
+---
+
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="/">
+      <img src="/assets/img/logo-192.png" alt="" width="38" height="38" />
+      <span class="brand-name">Voleybol<b>ve Veleybol</b></span>
+    </a>
+    <nav class="nav" aria-label="Ana menü">
+      {NAV.map((n) => (
+        <a href={n.href} aria-current={n.key === active ? 'page' : undefined}>{n.label}</a>
+      ))}
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Karanlık / aydınlık tema">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 13.2A8.6 8.6 0 0 1 10.8 3a8.7 8.7 0 1 0 10.2 10.2Z"/></svg>
+      </button>
+      <a class="btn btn-yt btn-sm" href="https://www.youtube.com/@voleybolveveleybol?sub_confirmation=1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 0 0 2-2C23 15.8 23 12 23 12ZM9.8 15.5v-7l6.1 3.5-6.1 3.5Z"/></svg>
+        Abone ol
+      </a>
+      <button class="icon-btn menu-btn" data-menu-toggle type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Menü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobil menü">
+  {MOBIL.map((n) => <a href={n.href}>{n.label}</a>)}
+</nav>
