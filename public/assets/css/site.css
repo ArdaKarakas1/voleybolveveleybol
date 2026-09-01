@@ -625,3 +625,7 @@ mark { background: color-mix(in srgb, var(--orange) 35%, transparent); color: in
 .skor-liste li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 .skor-liste li:last-child { border-bottom: 0; }
 .skor-liste .puan { font-weight: 700; }
+
+/* Cevap gönderilirken seçilen şık */
+.quiz-opt.bekliyor { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.quiz-opt.bekliyor .key { animation: pulse 0.9s ease-in-out infinite; }

@@ -103,17 +103,19 @@ export function ipAnahtari(headers) {
 
 /**
  * Kayan pencereli sınır: pencere içindeki deneme sayısı limiti aşarsa false.
- * Deneme her çağrıda kaydedilir; eski kayıtlar fırsat buldukça temizlenir.
+ * Kayıt ve sayım tek sorguda (CTE yazımı aynı ifadedeki SELECT'e görünmez,
+ * bu yüzden sayım mevcut denemeyi içermez — karşılaştırma "<" ile).
+ * Eski kayıtlar fırsat buldukça temizlenir.
  */
 export async function hizSiniri(sql, anahtar, limit, pencereSn) {
   if (Math.random() < 0.05) {
     await sql`DELETE FROM hiz_sinir WHERE zaman < now() - interval '1 day'`;
   }
-  await sql`INSERT INTO hiz_sinir (anahtar) VALUES (${anahtar})`;
   const [{ sayi }] = await sql`
+    WITH ekle AS (INSERT INTO hiz_sinir (anahtar) VALUES (${anahtar}))
     SELECT count(*)::int AS sayi FROM hiz_sinir
     WHERE anahtar = ${anahtar} AND zaman > now() - make_interval(secs => ${pencereSn})`;
-  return sayi <= limit;
+  return sayi < limit;
 }
 
 /* ---------- yanıt yardımcıları ---------- */

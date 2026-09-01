@@ -92,17 +92,19 @@
     document.getElementById('opts').addEventListener('click', function (e) {
       var b = e.target.closest('.quiz-opt');
       if (!b || answered || gonderiliyor) return;
-      cevapla(Number(b.getAttribute('data-i')), q);
+      cevapla(Number(b.getAttribute('data-i')), q, b);
     });
   }
 
-  function cevapla(secilen, q) {
+  function cevapla(secilen, q, secilenBtn) {
     gonderiliyor = true;
     var opts = host.querySelectorAll('.quiz-opt');
     opts.forEach(function (b) { b.disabled = true; });
+    secilenBtn.classList.add('bekliyor'); // anında geri bildirim: seçim işaretlendi
 
     api('deneme-cevap', { deneme_id: denemeId, sira: q.sira, secilen: secilen }).then(function (s) {
       gonderiliyor = false;
+      secilenBtn.classList.remove('bekliyor');
       if (s.durum === 410) { hataEkrani('Süre doldu — soru başına ortalama 1 dakika var. Yeni bir test başlatabilirsin.', true); return; }
       if (s.durum !== 200) {
         opts.forEach(function (b) { b.disabled = false; });
@@ -132,6 +134,7 @@
       });
     }).catch(function () {
       gonderiliyor = false;
+      secilenBtn.classList.remove('bekliyor');
       opts.forEach(function (b) { b.disabled = false; });
       hataUyarisi('Sunucuya ulaşılamadı, tekrar dene.');
     });
