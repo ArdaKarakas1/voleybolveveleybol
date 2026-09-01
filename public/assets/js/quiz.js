@@ -174,7 +174,7 @@
       '<p class="text-dim" style="margin-top:12px;max-width:46ch;margin-inline:auto">' + esc(band.metin) + '</p>' +
       '<p class="text-dim" style="margin-top:10px;font-size:14px">Süre: ' + sureBicimle(sureSn) + ' · Skorun kaydedildi</p>' +
       '<div class="quiz-actions" style="justify-content:center;margin-top:26px">' +
-      '<a class="btn btn-accent" href="/siralama/?set=' + SET_SLUG + '">Sıralamaya bak</a>' +
+      '<a class="btn btn-accent" href="/siralama/?set=' + SET_SLUG + '&taze=1">Sıralamaya bak</a>' +
       '<button class="btn btn-ghost" type="button" id="again">Tekrar dene</button>' +
       '<button class="btn btn-primary" type="button" id="share">Sonucu paylaş</button>' +
       '</div>' +

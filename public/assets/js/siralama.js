@@ -33,9 +33,13 @@
     });
     var url = new URL(location.href);
     if (set) url.searchParams.set('set', set); else url.searchParams.delete('set');
+    url.searchParams.delete('taze'); // yenilemede tekrar önbellek atlanmasın
     history.replaceState(null, '', url);
 
-    fetch('/api/siralama' + (set ? '?set=' + encodeURIComponent(set) : ''))
+    var sorgu = [];
+    if (set) sorgu.push('set=' + encodeURIComponent(set));
+    if (taze) { sorgu.push('taze=1'); taze = false; }
+    fetch('/api/siralama' + (sorgu.length ? '?' + sorgu.join('&') : ''))
       .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
       .then(function (d) {
         if (!d.tablo.length) {
@@ -68,7 +72,9 @@
     if (b) yukle(b.getAttribute('data-set'));
   });
 
-  var ilkSet = new URLSearchParams(location.search).get('set') || '';
+  var ilkParams = new URLSearchParams(location.search);
+  var ilkSet = ilkParams.get('set') || '';
+  var taze = ilkParams.get('taze') === '1'; // sonuç ekranından gelindi: önbelleksiz yükle (tek sefer)
 
   // Set düğmeleri + kendi adım paralel yüklenir; sonra tablo çekilir.
   Promise.all([
