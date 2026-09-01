@@ -1,0 +1,13 @@
+# Netlify
+.netlify/
+# Deploy paketleri
+*.zip
+# Bagimliliklar
+node_modules/
+# Ortam degiskenleri (Netlify site ayarlarinda tutuluyor)
+.env
+.env.*
+# Isletim sistemi
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://voleybolveveleybol.com/sitemap.xml

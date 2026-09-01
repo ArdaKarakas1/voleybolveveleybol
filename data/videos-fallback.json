@@ -1,0 +1,17 @@
+{
+  "channelUrl": "https://www.youtube.com/@voleybolveveleybol",
+  "note": "Sunucu fonksiyonu çalışmazsa gösterilen statik yedek liste. /api/videos çalıştığında bu dosya hiç kullanılmaz.",
+  "categories": [
+    { "id": "anlatim", "label": "Voleybol Anlatımları", "blurb": "Teknik, kural ve temel beceri anlatımları" },
+    { "id": "analiz", "label": "Maç Analizi & Haber", "blurb": "Sultanlar Ligi, milli takım ve maç çözümlemeleri" },
+    { "id": "eglence", "label": "Eğlence & Shorts", "blurb": "Kısa videolar, sahadan anlar, voleybol mizahı" }
+  ],
+  "videos": [
+    { "id": "eSjEtD2Swco", "title": "Göklerde Kartal Gibiydim", "published": "2026-05-20T12:00:00Z", "thumb": "https://i.ytimg.com/vi/eSjEtD2Swco/hqdefault.jpg", "category": "eglence" },
+    { "id": "huBW7kXJR2o", "title": "Artık Uçamıyorum, Bana N'oldu?", "published": "2026-05-14T12:00:00Z", "thumb": "https://i.ytimg.com/vi/huBW7kXJR2o/hqdefault.jpg", "category": "eglence" },
+    { "id": "KPpwOOfe5vE", "title": "HI GEORGIE — Bana paspas ile adam öldürttünüz", "published": "2026-05-08T12:00:00Z", "thumb": "https://i.ytimg.com/vi/KPpwOOfe5vE/hqdefault.jpg", "category": "eglence" },
+    { "id": "a9CHirabFrQ", "title": "Voleybolda Manşet Nasıl Alınır?", "published": "2026-04-28T12:00:00Z", "thumb": "https://i.ytimg.com/vi/a9CHirabFrQ/hqdefault.jpg", "category": "anlatim" },
+    { "id": "MoDx3CGVFaU", "title": "Üst Üste 6 Ace Attığını Söylemiştir", "published": "2026-04-20T12:00:00Z", "thumb": "https://i.ytimg.com/vi/MoDx3CGVFaU/hqdefault.jpg", "category": "analiz" },
+    { "id": "cFqFIGWSe80", "title": "Finish Him — Sahil Günlük Voleybol Dozu 5", "published": "2026-04-12T12:00:00Z", "thumb": "https://i.ytimg.com/vi/cFqFIGWSe80/hqdefault.jpg", "category": "eglence" }
+  ]
+}

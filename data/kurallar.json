@@ -1,0 +1,389 @@
+{
+  "kaynak": "FIVB Resmî Voleybol Oyun Kuralları (2025–2028) ve TVF çevirisi esas alınmıştır.",
+  "kategoriler": [
+    { "id": "temel", "label": "Temel kurallar" },
+    { "id": "sayi", "label": "Sayı, set ve maç" },
+    { "id": "oyuncu", "label": "Oyuncular ve rotasyon" },
+    { "id": "vurus", "label": "Vuruşlar ve hatalar" },
+    { "id": "servis", "label": "Servis" },
+    { "id": "hucum", "label": "Hücum ve blok" },
+    { "id": "file", "label": "File, çizgiler, top" },
+    { "id": "libero", "label": "Libero" },
+    { "id": "yonetim", "label": "Mola, değişiklik, kartlar" },
+    { "id": "plaj", "label": "Plaj voleybolu" },
+    { "id": "terim", "label": "Terimler sözlüğü" }
+  ],
+  "maddeler": [
+    {
+      "id": "amac",
+      "cat": "temel",
+      "q": "Voleybolun amacı nedir?",
+      "a": "<p>İki takım, file ile ikiye ayrılmış bir sahada topu rakip sahaya düşürmeye çalışır. Amaç: topu <strong>rakip sahaya yere değecek şekilde</strong> göndermek ve kendi sahanda yere düşmesini engellemek.</p><p>Takımın topu karşıya göndermek için <strong>en fazla üç vuruş hakkı</strong> vardır (blok teması bu üçe dahil değildir). Ralliyi kazanan takım bir sayı alır ve servisi kullanır.</p>",
+      "tags": ["amaç", "oyun", "temel"]
+    },
+    {
+      "id": "saha-olculeri",
+      "cat": "temel",
+      "q": "Voleybol sahasının ölçüleri nedir?",
+      "a": "<p>Oyun alanı <strong>18 m × 9 m</strong> dikdörtgendir; orta çizgi sahayı 9 m × 9 m iki alana böler.</p><ul><li><strong>Hücum (3 metre) çizgisi:</strong> orta çizginin 3 m gerisinde, her iki alanda</li><li><strong>Serbest bölge:</strong> her yönde en az 3 m (uluslararası turnuvalarda yanlarda 5 m, dip tarafta 6,5 m)</li><li><strong>Engelsiz yükseklik:</strong> oyun alanının üzerinde en az 7 m</li></ul><p>Çizgiler 5 cm genişliğindedir ve <strong>sahaya dahildir</strong> — çizgiye değen top içeridir.</p>",
+      "tags": ["saha", "ölçü", "hücum çizgisi", "3 metre"]
+    },
+    {
+      "id": "file-yuksekligi",
+      "cat": "file",
+      "q": "File yüksekliği kaç metre?",
+      "a": "<ul><li><strong>Erkekler:</strong> 2,43 m</li><li><strong>Kadınlar:</strong> 2,24 m</li></ul><p>Yaş kategorilerinde file alçaltılır (örneğin genç erkeklerde 2,35 m, midi kategorilerde daha da alçak). File yüksekliği sahanın <strong>ortasından</strong> ölçülür; yan çizgiler üzerindeki iki uç aynı yükseklikte olmalı ve orta noktadan en fazla 2 cm yüksek olabilir.</p>",
+      "tags": ["file", "yükseklik", "2.43", "2.24"]
+    },
+    {
+      "id": "top-ozellikleri",
+      "cat": "file",
+      "q": "Voleybol topunun özellikleri nedir?",
+      "a": "<ul><li><strong>Çevre:</strong> 65–67 cm</li><li><strong>Ağırlık:</strong> 260–280 g</li><li><strong>İç basınç:</strong> 0,30–0,325 kg/cm² (294,3–318,82 mbar)</li></ul><p>Top esnek deri veya sentetik deri kaplamalıdır. FIVB ve resmî yarışmalarda aynı özelliklere sahip <strong>beş top</strong> kullanılır; serbest bölgenin dört köşesinde ve her hakemin arkasında birer olmak üzere <strong>altı top toplayıcı</strong> görev yapar.</p>",
+      "tags": ["top", "ağırlık", "basınç"]
+    },
+    {
+      "id": "kac-sayi",
+      "cat": "sayi",
+      "q": "Bir set kaç sayı? Maç kaç sette biter?",
+      "a": "<p>Set <strong>25 sayıya</strong> ulaşan ve rakibiyle arasında <strong>en az 2 sayı fark</strong> bulunan takımın olur. 24–24 olursa fark 2'ye çıkana kadar oyun sürer (26–24, 27–25, 32–30…). <strong>Üst sınır yoktur.</strong></p><p>Maç <strong>3 set kazanan</strong> takımın olur (beş setin en iyisi). Skor 2–2 olursa oynanan beşinci set (tie-break) <strong>15 sayı</strong> üzerinden, yine 2 sayı farkla oynanır.</p>",
+      "tags": ["set", "25", "15", "tie-break", "sayı"]
+    },
+    {
+      "id": "ralli-sayi",
+      "cat": "sayi",
+      "q": "Ralli sayı sistemi nedir?",
+      "a": "<p>1999'dan beri voleybolda <strong>her ralli bir sayıyla biter</strong> — servisi kim atarsa atsın, ralliyi kazanan takım sayıyı alır. Buna <em>rally point</em> (kazanan ralli) sistemi denir.</p><p>Eski sistemde yalnızca servis atan takım sayı alabiliyordu; bu yüzden maçlar çok uzuyordu. Yeni sistem maç süresini öngörülebilir hâle getirdi.</p>",
+      "tags": ["ralli", "rally point", "sayı sistemi"]
+    },
+    {
+      "id": "saha-degisimi",
+      "cat": "sayi",
+      "q": "Takımlar sahayı ne zaman değiştirir?",
+      "a": "<p>Her setin bitiminde takımlar saha değiştirir. <strong>Beşinci sette</strong> (tie-break) ise bir takım <strong>8. sayıya</strong> ulaştığında saha değişimi yapılır — böylece salon koşullarından kaynaklı avantaj eşitlenir.</p><p>Setler arası ara 3 dakikadır; yarışma yönetmeliği izin verirse 2. ve 3. set arasındaki ara 10 dakikaya çıkarılabilir.</p>",
+      "tags": ["saha değişimi", "ara", "tie-break"]
+    },
+    {
+      "id": "rotasyon",
+      "cat": "oyuncu",
+      "q": "Rotasyon nasıl işler?",
+      "a": "<p>Sahada 6 oyuncu vardır ve pozisyonlar şöyle numaralanır:</p><ul><li><strong>1</strong> — sağ arka (servisi atan oyuncu)</li><li><strong>2</strong> — sağ ön · <strong>3</strong> — orta ön · <strong>4</strong> — sol ön</li><li><strong>5</strong> — sol arka · <strong>6</strong> — orta arka</li></ul><p>Servisi <strong>rakipten kazanan</strong> takım, servis atmadan önce bir pozisyon <strong>saat yönünde</strong> döner (1 → 6 → 5 → 4 → 3 → 2 → 1). Servisi zaten elinde tutan takım dönmez.</p>",
+      "tags": ["rotasyon", "pozisyon", "1 numara", "dönüş"]
+    },
+    {
+      "id": "pozisyon-hatasi",
+      "cat": "oyuncu",
+      "q": "Pozisyon (rotasyon) hatası nedir?",
+      "a": "<div class=\"note\"><strong>2025–2028 kural değişikliği:</strong> Artık yalnızca <strong>servis karşılayan takım</strong> servis vuruşu anında rotasyon sırasına uygun durmak zorundadır. <strong>Servis atan takım</strong>, servis atan oyuncu dışında <strong>kendi sahası içinde</strong> istediği yerde durabilir — rotasyon sırası zorunluluğu kaldırıldı. (Servis anında kendi sahasında bulunma şartı ise devam ediyor.)</div><p>Karşılayan takımda, servis vuruşu <strong>anında</strong> oyuncular rotasyon sırasına uygun durmuyorsa pozisyon hatası olur. Ölçüt ayakların yerle temas noktasıdır:</p><ul><li>Her ön bölge oyuncusunun en az bir ayağı, karşılık gelen arka oyuncudan <strong>file'e daha yakın</strong> olmalı</li><li>Sağ (ve sol) taraftaki oyuncular, aynı sıradaki ortadaki oyuncudan <strong>yanda</strong> kalmalı</li></ul><p>Ceza: rakibe bir sayı ve servis. Servis vuruşundan <strong>sonra</strong> oyuncular sahada istedikleri yere geçebilir.</p>",
+      "tags": ["pozisyon hatası", "rotasyon hatası", "diziliş", "2025 kural değişikliği"]
+    },
+    {
+      "id": "kadro",
+      "cat": "oyuncu",
+      "q": "Takımda kaç oyuncu bulunur?",
+      "a": "<p>Sahada her takımdan <strong>6 oyuncu</strong> bulunur. Maç kadrosu en fazla <strong>12 oyuncudur</strong>; FIVB yarışmalarında iki libero ile birlikte <strong>14 oyuncuya</strong> kadar çıkabilir.</p><p>Takımda bir <strong>takım kaptanı</strong> ve sahada bir <strong>oyun kaptanı</strong> bulunur. Yalnızca oyun kaptanı, top oyun dışındayken hakemle konuşabilir.</p>",
+      "tags": ["kadro", "oyuncu sayısı", "kaptan"]
+    },
+    {
+      "id": "mevkiler",
+      "cat": "oyuncu",
+      "q": "Voleybolda mevkiler nelerdir?",
+      "a": "<ul><li><strong>Pasör (setter):</strong> ikinci topu düzenler, hücumu kurar. Takımın oyun kurucusu.</li><li><strong>Pasör çaprazı (opposite):</strong> pasörün rotasyonda tam karşısında; ağırlıklı olarak hücum yükü taşır, 2 numaradan bitirir.</li><li><strong>Smaçör / dış oyuncu (outside hitter):</strong> 4 numaradan hücum eder, aynı zamanda servis karşılar.</li><li><strong>Orta oyuncu (middle blocker):</strong> hızlı hücum yapar ve blokta merkez görevi görür.</li><li><strong>Libero:</strong> savunma ve servis karşılama uzmanı; blok yapamaz ve topun <strong>tamamı</strong> file üst kenarından yukarıdayken hücum vuruşunu tamamlayamaz.</li></ul>",
+      "tags": ["mevki", "pasör", "smaçör", "orta", "opposite", "libero"]
+    },
+    {
+      "id": "uc-vurus",
+      "cat": "vurus",
+      "q": "Bir takım kaç kez topa vurabilir?",
+      "a": "<p>Takım topu rakip sahaya göndermek için <strong>en fazla üç vuruş</strong> yapabilir. Dördüncü vuruş <strong>“dört vuruş” hatasıdır</strong>.</p><p>Önemli istisna: <strong>blok teması bu üç vuruştan sayılmaz.</strong> Yani blokta topa dokunulduysa takımın hâlâ üç vuruş hakkı vardır.</p>",
+      "tags": ["üç vuruş", "dört vuruş", "blok teması"]
+    },
+    {
+      "id": "cift-vurus",
+      "cat": "vurus",
+      "q": "Çift vuruş (double) nedir? İlk topta neden çalınmaz?",
+      "a": "<p>Bir oyuncunun topa <strong>üst üste iki kez</strong> vurması veya topun tek harekette vücudunun birden fazla bölümüne <strong>ardışık</strong> değmesi çift vuruş hatasıdır.</p><div class=\"note\"><strong>Kritik istisna:</strong> Takımın <strong>ilk vuruşunda</strong> (servis karşılama veya rakip hücumunu kurtarma), tek bir hareket içinde kalmak şartıyla top vücudun birden fazla bölümüne ardışık değebilir — bu hata değildir. Bu yüzden manşette topun kollara sonra göğse değmesi çalınmaz.</div><p>Blokta da top aynı hareket içinde birden fazla oyuncuya veya vücut bölgesine değebilir; bu tek temas sayılır.</p>",
+      "tags": ["çift vuruş", "double", "ilk vuruş", "istisna"]
+    },
+    {
+      "id": "tutma",
+      "cat": "vurus",
+      "q": "“Tutma” (kaldırma) hatası nedir?",
+      "a": "<p>Topun <strong>yakalanması veya atılması</strong> hatadır. Top vuruş anında temiz bir şekilde <strong>sekmelidir</strong>; oyuncunun elinde/kolunda durması ya da yavaşlayıp yönlendirilmesi tutma sayılır.</p><p>Parmak pasta topun elde \"oturması\", manşette topun kollarda taşınması tipik örneklerdir. Top vücudun her yerine — ayak dâhil — vurulabilir; ölçüt temasın <strong>anlık</strong> olmasıdır.</p>",
+      "tags": ["tutma", "kaldırma", "held ball", "catch"]
+    },
+    {
+      "id": "topa-vurma-yerleri",
+      "cat": "vurus",
+      "q": "Topa vücudun neresiyle vurulabilir?",
+      "a": "<p>Topa <strong>vücudun herhangi bir yeriyle</strong> vurulabilir — el, kol, baş, gövde, bacak, ayak. 1990'lardan beri ayakla oynamak da kurallara uygundur.</p><p>Kural, hangi uzuvla vurulduğuyla değil, temasın niteliğiyle ilgilenir: top tutulmamalı, atılmamalı ve aynı oyuncuya (ilk vuruş istisnası dışında) ardışık iki kez değmemelidir.</p>",
+      "tags": ["ayakla vuruş", "temas", "vücut"]
+    },
+    {
+      "id": "servis-nedir",
+      "cat": "servis",
+      "q": "Servis kuralları nelerdir?",
+      "a": "<p>Servis, 1 numaradaki oyuncunun topu dip çizginin gerisindeki <strong>9 m genişliğindeki servis bölgesinden</strong> oyuna sokmasıdır.</p><ul><li>1. hakemin düdüğünden sonra <strong>8 saniye</strong> içinde atılmalıdır</li><li>Top elden bırakılıp/havaya atılıp <strong>tek elle veya kolun herhangi bir yeriyle</strong> vurulmalıdır</li><li>Vuruş anında — <strong>smaç serviste sıçrama anında</strong> — oyuncu dip çizgiye, saha içine <strong>veya servis bölgesinin dışındaki zemine</strong> basamaz. Vuruştan sonra saha içine inmesi serbesttir</li><li>Topu <strong>yalnızca bir kez</strong> havaya atma veya bırakma hakkı vardır. Atılan topu vurmadan yere bırakmak servis hatasıdır — FIVB'de tekrar hakkı yoktur</li></ul><div class=\"note\">Topu elde çevirmek, oynatmak veya sektirmek serbesttir; kısıtlama yalnızca havaya atma/bırakma hareketi içindir.</div>",
+      "tags": ["servis", "8 saniye", "dip çizgi", "servis bölgesi", "smaç servis"]
+    },
+    {
+      "id": "file-servis",
+      "cat": "servis",
+      "q": "Servis file'e değerse geçerli mi?",
+      "a": "<p><strong>Evet, geçerlidir.</strong> Top file'e değip antenler arasından rakip sahaya geçerse oyun devam eder. Buna <em>let serve</em> denir.</p><p>2001 yılına kadar file'e değen servis hataydı; kural değişince oyun daha akıcı hâle geldi. Ancak top file'e takılıp <strong>kendi sahana düşerse</strong> veya antene değerse hatadır.</p>",
+      "tags": ["file servis", "let", "servis hatası"]
+    },
+    {
+      "id": "servis-bloklama",
+      "cat": "servis",
+      "q": "Servise blok yapılabilir mi?",
+      "a": "<p><strong>Hayır.</strong> Rakibin servisi <strong>bloklanamaz</strong> ve ön bölgeden, file üst kenarından yukarıdayken <strong>hücum vuruşuyla karşılanamaz</strong>. Her ikisi de hatadır.</p><p>Servis karşılama, topu manşet veya parmak pasla kontrol ederek pasöre yönlendirmektir.</p>",
+      "tags": ["servis blok", "karşılama", "hata"]
+    },
+    {
+      "id": "servis-engelleme",
+      "cat": "servis",
+      "q": "Servis engelleme (perdeleme) nedir?",
+      "a": "<div class=\"note\"><strong>2025–2028 kural değişikliği:</strong> Servis atan takımın oyuncularının, top file'i geçene kadar <strong>ellerini baş hizasının üzerine kaldırması yasaktır</strong>. Bu mutlak bir yasaktır — topun o oyuncunun üzerinden geçip geçmediğine bakılmaz.</div><p>Bunun dışında oyuncular zıplayarak veya toplu hâlde durarak rakibin <strong>servis atan oyuncuyu ve topun uçuş yolunu görmesini engelleyemez</strong>. Buna perdeleme (screening) denir.</p><p>Toplu perdelemede hata sayılması için topun <strong>bu perdenin üzerinden geçmesi</strong> gerekir; ancak el kaldırma yasağı için böyle bir şart yoktur.</p>",
+      "tags": ["perdeleme", "screening", "servis engelleme", "2025 kural değişikliği"]
+    },
+    {
+      "id": "servis-sirasi",
+      "cat": "servis",
+      "q": "Yanlış oyuncu servis atarsa ne olur?",
+      "a": "<p><strong>Servis sırası hatası</strong> olur: rakip takım bir sayı ve servis kazanır, dizilişteki hata düzeltilir.</p><p>Hata sonradan fark edilirse, hatanın yapıldığı an tespit edilebiliyorsa o andan itibaren hatalı takımın kazandığı sayılar iptal edilir; rakibin sayıları korunur.</p><div class=\"note\">Hatanın başladığı an <strong>tespit edilemiyorsa</strong> hiçbir sayı iptal edilmez; tek yaptırım rakibe bir sayı ve servis verilmesidir.</div>",
+      "tags": ["servis sırası", "yanlış servis", "hata"]
+    },
+    {
+      "id": "hucum-vurusu",
+      "cat": "hucum",
+      "q": "Hücum vuruşu nedir? Kimler yapabilir?",
+      "a": "<p>Servis ve blok dışındaki, topu rakip sahaya yönlendiren her hareket hücum vuruşudur (smaç, plase, aşırtma).</p><ul><li><strong>Ön bölge oyuncuları</strong> her yükseklikten hücum edebilir</li><li><strong>Arka bölge oyuncuları</strong> yalnızca hücum çizgisinin gerisinden sıçrayarak hücum edebilir; sıçrarken çizgiye basamaz veya çizgiyi geçemez. Havadayken saha içine inmesi serbesttir</li></ul><div class=\"note\">Arka bölge oyuncusu ön bölgede, topun tamamı file üst kenarından yukarıdayken hücum vuruşu <strong>yapamaz</strong>. Top file seviyesinin altındaysa serbesttir.</div>",
+      "tags": ["hücum", "smaç", "arka bölge", "pipe", "3 metre"]
+    },
+    {
+      "id": "blok-kim",
+      "cat": "hucum",
+      "q": "Blok kuralları nelerdir?",
+      "a": "<ul><li>Yalnızca <strong>ön bölge oyuncuları</strong> blok yapabilir</li><li><strong>Libero blok yapamaz</strong>, blok denemesi bile hatadır</li><li>Rakibin <strong>servisi bloklanamaz</strong></li><li>Blok teması takımın üç vuruşundan <strong>sayılmaz</strong></li><li>Blok yapan oyuncu, bloktan sonraki <strong>ilk vuruşu</strong> kendisi yapabilir</li></ul><p>Elleri file üzerinden rakip sahaya uzatmak serbesttir — ancak rakip hücum vuruşunu tamamlamadan topa dokunmak <strong>hatadır</strong>.</p>",
+      "tags": ["blok", "ön bölge", "libero", "servis blok"]
+    },
+    {
+      "id": "file-uzeri-gecis",
+      "cat": "hucum",
+      "q": "Eli rakip sahaya uzatmak hata mı?",
+      "a": "<p><strong>Blokta:</strong> Eller file üzerinden karşı sahaya geçebilir, yeter ki rakibin oyununa müdahale edilmesin — yani rakip hücum vuruşunu yapmadan önce topa dokunulmasın.</p><p><strong>Hücumda:</strong> Rakip sahadaki topa vurmak hatadır. Ancak vuruş <strong>kendi saha tarafında</strong> yapıldıysa, elin devam hareketiyle (follow-through) file üzerinden geçmesi hata değildir.</p>",
+      "tags": ["file üstü", "penetrasyon", "follow through"]
+    },
+    {
+      "id": "orta-cizgi",
+      "cat": "file",
+      "q": "Orta çizgiyi geçmek hata mı?",
+      "a": "<p>Kural <strong>ayaklar</strong> ile <strong>vücudun diğer kısımları</strong> için farklıdır — en çok karıştırılan noktalardan biri budur.</p><ul><li><strong>Ayak(lar):</strong> Orta çizgiye basmak veya çizgiyi kısmen geçmek serbesttir; ayağın bir kısmı hâlâ çizgiye temas ediyor ya da çizginin üzerindeyse sorun yok. <strong>Ayağın tamamen</strong> rakip sahaya geçmesi hatadır.</li><li><strong>El ve ayaktan yukarıdaki her yer:</strong> Rakip sahaya temas etmek <strong>serbesttir</strong> — yeter ki rakibin oyununu engellemesin. Yani file altından uzanan bir el tamamen karşı sahada olsa bile, müdahale yoksa hata değildir.</li></ul><div class=\"note\">Kısacası: \"tamamen geçerse hata\" kuralı <strong>yalnızca ayak</strong> içindir. El için ölçüt <strong>rakibi engelleyip engellemediğidir</strong>.</div>",
+      "tags": ["orta çizgi", "file altı geçiş", "ayak", "el"]
+    },
+    {
+      "id": "file-temas",
+      "cat": "file",
+      "q": "File'e değmek hata mı?",
+      "a": "<p>Kural şudur: <strong>antenler arasındaki file'e</strong>, oyuncunun <strong>topa oynama hareketi içindeyken</strong> teması hatadır. Filenin hangi yüksekliğine değdiği fark etmez — \"sadece üst bant sayılır\" yaygın bir yanlış bilgidir.</p><ul><li>Hücum ederken elin file'e sürtmesi → <strong>hata</strong></li><li>Smaçtan sonra inerken formanın file'e değmesi → <strong>hata.</strong> Topa oynama hareketi, oyuncu <strong>güvenli şekilde yere inip yeni bir harekete hazır olduğunda</strong> biter; iniş hâlâ o harekete dahildir</li><li><strong>Saçın</strong> file'e teması → yalnızca rakibin topa oynamasını etkilediyse veya ralliyi kestiyse hata</li><li>Antenler <strong>dışındaki</strong> file, direkler ve halatlara temas → oyunu etkilemediği sürece hata değil</li><li><strong>Antene temas</strong>, oyuncunun topa oynama hareketi sırasında olursa hatadır</li></ul><p>Rakip oyuncunun file'i çekerek veya tutarak oyunu etkilemesi de hatadır.</p>",
+      "tags": ["file teması", "anten", "iniş", "saç"]
+    },
+    {
+      "id": "anten",
+      "cat": "file",
+      "q": "Anten nedir? Top antenin dışından geçebilir mi?",
+      "a": "<p>Antenler, filenin her iki yanına yan çizgilerin tam üzerine dik olarak takılan <strong>1,80 m uzunluğundaki</strong> kırmızı-beyaz çubuklardır. Filenin üstünden <strong>80 cm</strong> yukarı çıkarlar ve <strong>geçiş alanının sınırını</strong> belirlerler.</p><p>Topun rakip sahaya <strong>antenler arasından</strong> geçmesi zorunludur. Antene değen veya antenin dışından geçen top hatadır.</p><div class=\"note\"><strong>2025–2028 kural değişikliği:</strong> Antenin dışından karşı tarafa taşan top yalnızca takımın <strong>ilk vuruşundan</strong> gelmişse geri kurtarılabilir. <strong>İkinci veya üçüncü</strong> vuruştan gelen top antenin dışından file düzlemini geçtiği anda <strong>\"aut\"</strong> sayılır ve kurtarılamaz.</div>",
+      "tags": ["anten", "geçiş alanı", "dışarı", "2025 kural değişikliği"]
+    },
+    {
+      "id": "top-ic-dis",
+      "cat": "file",
+      "q": "Top içerde mi dışarda mı? Nasıl karar verilir?",
+      "a": "<p>Top, <strong>sahanın zeminine çizgiler dâhil</strong> temas ederse <strong>içeridedir</strong>. Çizgiler sahaya dahildir; topun çizgiye en ufak teması bile sayıyı içeri yazdırır.</p><p><strong>Dışarıda</strong> sayılan durumlar:</p><ul><li>Top tamamen çizgilerin dışına düşerse</li><li>Antene, direklere, file'in antenler dışındaki kısmına, tavana veya saha dışındaki bir cisme değerse</li><li>Geçiş alanının dışından karşıya geçerse</li></ul>",
+      "tags": ["in", "out", "çizgi", "aut"]
+    },
+    {
+      "id": "libero-nedir",
+      "cat": "libero",
+      "q": "Libero nedir, ne yapar?",
+      "a": "<p>Libero, <strong>savunma ve servis karşılama uzmanı</strong> olan, takım arkadaşlarından <strong>farklı renk forma</strong> giyen özel bir oyuncudur. Yalnızca arka bölge oyuncularının yerine girer.</p><p>Değişimi hakemden izin gerektirmez: top oyun dışındayken ve düdükten önce, saha kenarındaki serbest bölgeden (hücum çizgisi ile dip çizgi arası) girip çıkar. <strong>İki libero değişimi arasında tamamlanmış bir ralli olmalıdır.</strong></p>",
+      "tags": ["libero", "savunma", "farklı forma"]
+    },
+    {
+      "id": "libero-yasaklar",
+      "cat": "libero",
+      "q": "Libero neleri yapamaz?",
+      "a": "<ul><li><strong>Hücum vuruşunu tamamlayamaz</strong> — sahanın neresinde olursa olsun, temas anında topun <strong>tamamı file üst kenarından yukarıdaysa</strong> hücum edemez. Top file seviyesinin altındaysa hücum serbesttir</li><li><strong>Blok yapamaz</strong>, blok denemesinde bile bulunamaz</li><li><strong>Servis atamaz</strong> (FIVB kuralı; bazı ulusal liglerde izin verilebilir)</li></ul><div class=\"note\">Ek kısıtlama: Libero <strong>ön bölgede parmak pasla</strong> top verdiyse, o topa file üst kenarından yukarıdayken hücum yapılamaz. Aynı pası hücum çizgisinin gerisinden verirse bu kısıt yoktur.</div><p><strong>Sık karşılaşılan yanlış bilgi:</strong> Libero artık <strong>takım kaptanı da oyun kaptanı da olabilir</strong> — bu yasak 2022'de kaldırıldı.</p>",
+      "tags": ["libero", "hücum yasağı", "blok yasağı", "parmak pas", "kaptan"]
+    },
+    {
+      "id": "molalar",
+      "cat": "yonetim",
+      "q": "Takımlar kaç mola alabilir?",
+      "a": "<p>Her takım set başına <strong>2 mola</strong> alabilir; her mola <strong>30 saniyedir</strong>. Mola talebi yalnızca top oyun dışındayken, antrenör veya oyun kaptanı tarafından yapılır.</p><div class=\"note\"><strong>Teknik mola artık yok.</strong> 8. ve 16. sayıdaki 60 saniyelik teknik molalar salon voleybolunun resmî FIVB kurallarından tamamen çıkarıldı. (Plaj voleybolunda bir teknik mola hâlâ vardır.)</div>",
+      "tags": ["mola", "teknik mola", "30 saniye"]
+    },
+    {
+      "id": "degisiklik",
+      "cat": "yonetim",
+      "q": "Set başına kaç oyuncu değişikliği yapılabilir?",
+      "a": "<p>Bir takım set başına en fazla <strong>6 oyuncu değişikliği</strong> yapabilir. Aynı anda bir veya birden fazla oyuncu değiştirilebilir.</p><p><strong>Kural:</strong> İlk dizilişte yer alan bir oyuncu setten çıkıp bir kez geri girebilir, ancak <strong>yalnızca kendi yerine giren oyuncunun yerine</strong>. Yedek bir oyuncu ise sette yalnızca bir kez oyuna girebilir ve yalnızca ilk dizilişteki bir oyuncunun yerine geçebilir.</p><p><strong>Libero değişimleri bu 6 hakka dahil değildir.</strong></p>",
+      "tags": ["değişiklik", "oyuncu değişimi", "6 hak"]
+    },
+    {
+      "id": "kartlar",
+      "cat": "yonetim",
+      "q": "Sarı ve kırmızı kart ne anlama gelir?",
+      "a": "<p>Yanlış davranışlar kademeli olarak cezalandırılır:</p><ul><li><strong>Uyarı — sarı kart:</strong> ceza yok, kayda geçer</li><li><strong>Ceza — kırmızı kart:</strong> rakibe <strong>bir sayı ve servis</strong></li><li><strong>Çıkarma — sarı ve kırmızı kart birlikte, tek elde:</strong> oyuncu <strong>o set boyunca</strong> oyun alanını terk eder</li><li><strong>Diskalifiye — sarı ve kırmızı kart ayrı ellerde:</strong> oyuncu <strong>maçın kalanı boyunca</strong> salonu terk eder</li></ul><p>Ayrıca oyunu geciktirme için önce <strong>geciktirme uyarısı</strong>, sonraki her geciktirmede <strong>geciktirme cezası</strong> (rakibe sayı ve servis) verilir.</p>",
+      "tags": ["kart", "sarı kart", "kırmızı kart", "ceza", "diskalifiye"]
+    },
+    {
+      "id": "video-challenge",
+      "cat": "yonetim",
+      "q": "Video kontrol (challenge) nasıl işler?",
+      "a": "<p>Video kontrol sistemi kullanılan yarışmalarda takımlar, hakem kararına <strong>itiraz</strong> ederek görüntü incelemesi isteyebilir. İnceleme; topun in/out olması, file teması, blok teması, anten teması, çizgi ihlali ve orta çizgi ihlali gibi başlıklarda yapılır.</p><p>Takım itirazında <strong>haklı çıkarsa hakkını kaybetmez</strong>, haksız çıkarsa itiraz hakkı azalır. Hak sayısı yarışma yönetmeliğine göre belirlenir (genellikle set başına 2).</p>",
+      "tags": ["challenge", "video kontrol", "itiraz", "VAR"]
+    },
+    {
+      "id": "plaj-farklar",
+      "cat": "plaj",
+      "q": "Plaj voleybolu salon voleybolundan nasıl farklı?",
+      "a": "<ul><li><strong>2 oyuncu</strong> (yedek yok, değişiklik yok)</li><li>Saha <strong>16 m × 8 m</strong>, hücum çizgisi <strong>yoktur</strong> — her oyuncu her yerden hücum edebilir</li><li>Setler <strong>21 sayı</strong>, üçüncü set 15 sayı; maç iki set kazanan takımın</li><li><strong>Blok teması takımın üç vuruşundan sayılır</strong> — bu en kritik farktır</li><li><strong>Rotasyon yoktur</strong>, sadece servis sırası vardır</li><li>Saha değişimi her <strong>7 sayıda</strong> bir (üçüncü sette her 5 sayıda)</li></ul>",
+      "tags": ["plaj", "beach", "fark", "21 sayı"]
+    },
+    {
+      "id": "plaj-yasaklar",
+      "cat": "plaj",
+      "q": "Plaj voleybolunda hangi vuruşlar yasak?",
+      "a": "<ul><li><strong>Açık el plase (dink/tip):</strong> Parmak uçlarıyla topu yönlendirmek yasaktır. Plase yapılacaksa yumruk, sert parmak eklemleri veya avuç içiyle yapılmalıdır.</li><li><strong>Parmak pasla karşıya top geçirmek:</strong> Yalnızca vuruş anında <strong>omuz eksenine dik</strong> yönde yapılırsa geçerlidir. Aksi hâlde hata sayılır.</li></ul><div class=\"note\">Sık karıştırılan nokta: <strong>Sert vurulmuş bir topu savunurken</strong> parmak pasla oynanırsa, temasın bir an uzaması hata sayılmaz — bu durumda plaj voleybolu salondan <strong>daha esnektir</strong>. Sıkı değerlendirme servis karşılama ve sert olmayan toplar için geçerlidir.</div>",
+      "tags": ["plaj", "plase", "dink", "parmak pas", "sert vuruş savunması"]
+    },
+    {
+      "id": "terim-mansset",
+      "cat": "terim",
+      "q": "Manşet nedir?",
+      "a": "<p>İki kolun ön yüzeyi birleştirilerek yapılan alttan karşılama vuruşu. Servis karşılamada ve savunmada temel tekniktir.</p><p><strong>Doğru form:</strong> ayaklar omuz genişliğinden biraz açık, dizler bükülü, kalça geride, kollar düz ve gövdeden uzakta bir platform oluşturur. Topa <strong>bilek üstü ile dirsek arasındaki düz bölgeyle</strong> vurulur — kollar salınmaz, <strong>bacaklardan gelen itişle</strong> yönlendirilir. Omuzlar hedefe döner.</p>",
+      "tags": ["manşet", "pas", "karşılama", "teknik"]
+    },
+    {
+      "id": "terim-parmak",
+      "cat": "terim",
+      "q": "Parmak pas nedir?",
+      "a": "<p>Topun alın hizasının biraz üzerinde, iki elin parmaklarıyla karşılanıp yönlendirildiği tekniktir. Pasörün ana aracıdır.</p><p><strong>Doğru form:</strong> eller alnın üstünde üçgen bir pencere oluşturur, başparmaklar birbirine bakar, dirsekler dışa doğru açıktır. Top <strong>parmak uçlarıyla</strong> karşılanır, avuç içiyle değil. İtiş bacaklardan başlar, kollar tam olarak uzatılarak biter.</p>",
+      "tags": ["parmak pas", "pas", "setter", "teknik"]
+    },
+    {
+      "id": "terim-ace",
+      "cat": "terim",
+      "q": "Ace nedir?",
+      "a": "<p>Doğrudan sayı getiren servis. Top rakip sahaya değer ve karşılanamaz, ya da karşılama o kadar bozuktur ki takım topu karşıya gönderemez.</p><p>Türkçede \"servis asi\" veya kısaca \"as\" da denir.</p>",
+      "tags": ["ace", "as", "servis"]
+    },
+    {
+      "id": "terim-plase",
+      "cat": "terim",
+      "q": "Plase nedir?",
+      "a": "<p>Sert smaç yerine, topun kontrollü şekilde bloğun arkasındaki veya savunmanın açığındaki boşluğa <strong>yumuşak</strong> yönlendirilmesi. İngilizcede <em>tip</em> veya <em>dink</em> denir.</p><p>Salon voleybolunda parmak uçlarıyla yapılabilir; <strong>plaj voleybolunda açık el plase yasaktır</strong>.</p>",
+      "tags": ["plase", "tip", "dink", "aşırtma"]
+    },
+    {
+      "id": "terim-pipe",
+      "cat": "terim",
+      "q": "Pipe nedir?",
+      "a": "<p>Arka bölge oyuncusunun <strong>sahanın ortasından</strong> (6 numara bölgesi), hücum çizgisinin gerisinden sıçrayarak yaptığı hücum. Bloğu ortada meşgul ederek kanat hücumlarına alan açar.</p><p>Aynı mantıkla sağ arkadan yapılan hücuma <strong>bic</strong>, sol arkadan yapılana <strong>back-left</strong> denir.</p>",
+      "tags": ["pipe", "arka bölge hücumu", "bic"]
+    },
+    {
+      "id": "terim-slide",
+      "cat": "terim",
+      "q": "Slide (kayan hücum) nedir?",
+      "a": "<p>Genellikle orta oyuncunun kullandığı, pasörün <strong>arkasına doğru koşarak</strong> tek ayakla sıçradığı hızlı hücum. Oyuncu file boyunca yana kayarak havada ilerler.</p><p>Bloğun geç kalmasını sağlar ve hücum noktasını öngörülemez kılar. Basketboldaki turnike sıçramasına benzer.</p>",
+      "tags": ["slide", "kayan hücum", "orta oyuncu"]
+    },
+    {
+      "id": "terim-defans",
+      "cat": "terim",
+      "q": "Sıvama / dig nedir?",
+      "a": "<p>Rakibin sert hücumunu yerden kurtarma hareketi. Genellikle manşetle, bazen tek elle veya vücudun başka bir bölümüyle yapılır.</p><p>Kurtarılan topun oyunda kalması yeterlidir — düzgün yön vermek bonustur. Dalış (dive) ve kayma (sprawl) sıvamanın ileri düzey biçimleridir.</p>",
+      "tags": ["dig", "sıvama", "savunma", "kurtarış"]
+    },
+    {
+      "id": "terim-blok-cesit",
+      "cat": "terim",
+      "q": "Blok çeşitleri nelerdir?",
+      "a": "<ul><li><strong>Tekli blok:</strong> tek oyuncu — hızlı hücumlarda kaçınılmaz</li><li><strong>İkili blok:</strong> standart; kanat hücumlarına karşı temel savunma</li><li><strong>Üçlü blok:</strong> yüksek toplarda tüm ön bölge oyuncularının katılımı</li><li><strong>Kapatan (commit) blok:</strong> orta oyuncunun hızlı hücumcuyla birlikte sıçraması</li><li><strong>Okuyan (read) blok:</strong> pasörün elini bekleyip ona göre hareket etme</li></ul>",
+      "tags": ["blok", "tekli", "ikili", "commit", "read"]
+    },
+    {
+      "id": "terim-rotasyon-diz",
+      "cat": "terim",
+      "q": "5-1, 6-2 ve 4-2 sistemleri nedir?",
+      "a": "<ul><li><strong>5-1:</strong> Tek pasör, beş hücumcu. Pasör tüm rotasyonlarda pas verir. En yaygın modern sistem; oyun tutarlıdır ama pasör ön bölgedeyken üç hücumcu yerine iki hücumcuyla oynanır.</li><li><strong>6-2:</strong> İki pasör, ama pasör her zaman <strong>arka bölgeden</strong> pas verir — böylece daima üç hücumcu ön bölgede olur. Daha çok hücum seçeneği, ama iki iyi pasör gerektirir.</li><li><strong>4-2:</strong> İki pasör, ön bölgeden pas verirler. Öğretimi kolay, hücum gücü sınırlı — başlangıç seviyesi takımlar için.</li></ul>",
+      "tags": ["5-1", "6-2", "4-2", "sistem", "taktik"]
+    },
+    {
+      "id": "terim-serbest-top",
+      "cat": "terim",
+      "q": "Serbest top (free ball) nedir?",
+      "a": "<p>Rakibin hücum edemeyip topu manşet veya parmak pasla <strong>kontrolsüz/yumuşak</strong> şekilde karşıya göndermesi. Savunmadaki takım için düzenli hücum kurma fırsatıdır.</p><p>Bunun bir üst seviyesi <strong>down ball</strong>'dur: rakip sıçramadan ayakta smaç yapar; blok kurulmaz ama savunma daha derin durur.</p>",
+      "tags": ["free ball", "serbest top", "down ball"]
+    },
+    {
+      "id": "terim-side-out",
+      "cat": "terim",
+      "q": "Side-out ne demek?",
+      "a": "<p>Servis karşılayan takımın ralliyi kazanıp <strong>servisi eline geçirmesi</strong>. Modern voleybolda takımın en temel performans göstergelerinden biridir: yüksek side-out yüzdesi, rakibin seri sayı almasını engeller.</p>",
+      "tags": ["side out", "servis karşılama", "istatistik"]
+    },
+    {
+      "id": "terim-float",
+      "cat": "terim",
+      "q": "Float servis nedir?",
+      "a": "<p>Topa <strong>dönü vermeden</strong> atılan servis. Hava akımı topun yüzeyinde düzensiz davrandığı için top havada beklenmedik şekilde sapar ve karşılaması zorlaşır.</p><p><strong>Doğru form:</strong> top az yükseklikte ve dönmeden havaya atılır, avuç içinin sert bölgesiyle <strong>topun merkezine</strong> vurulur ve el <strong>takip hareketi yapmadan durur</strong>. Kolun devam etmesi topa dönü verir ve etkiyi bozar.</p>",
+      "tags": ["float", "servis", "teknik", "duran servis"]
+    },
+    {
+      "id": "terim-smac-servis",
+      "cat": "terim",
+      "q": "Smaç servis (jump serve) nedir?",
+      "a": "<p>Topun öne yukarı atılıp, koşu ve sıçrama ile smaç gibi vurulduğu servis. En agresif servis türüdür: hız yüksektir ve top öne doğru dönerek (top spin) sahaya hızla düşer.</p><p>Riski de yüksektir — hata oranı float servise göre belirgin biçimde fazladır. Bu yüzden çoğu takım kritik sayılarda daha güvenli olan <strong>jump float</strong> (sıçrayarak duran servis) tercih eder.</p>",
+      "tags": ["smaç servis", "jump serve", "jump float"]
+    },
+    {
+      "id": "terim-kirmizi-bolge",
+      "cat": "terim",
+      "q": "Ön bölge ve arka bölge nedir?",
+      "a": "<p><strong>Ön bölge:</strong> orta çizgi ile hücum (3 metre) çizgisi arasındaki alan. Yan çizgilerden serbest bölgeye doğru sınırsız uzanır.</p><p><strong>Arka bölge:</strong> hücum çizgisi ile dip çizgi arasındaki alan.</p><p>Bu ayrım hücum ve blok kurallarını belirler: arka bölge oyuncuları ön bölgede file üstünden hücum edemez, blok yapamaz.</p>",
+      "tags": ["ön bölge", "arka bölge", "hücum çizgisi"]
+    },
+    {
+      "id": "kural-baslangic",
+      "cat": "temel",
+      "q": "Maç nasıl başlar? Kura nasıl atılır?",
+      "a": "<p>Maçtan önce 1. hakem, iki takım kaptanının katılımıyla <strong>kura</strong> atar. Kurayı kazanan taraf şunlardan birini seçer:</p><ul><li><strong>Servis atmak ya da servis karşılamak</strong></li><li><strong>Sahanın hangi tarafında</strong> oynayacağı</li></ul><p>Kaybeden taraf kalan seçeneği alır. Beşinci sette (tie-break) yeni bir kura atılır.</p>",
+      "tags": ["kura", "başlangıç", "maç"]
+    },
+    {
+      "id": "kural-topa-tekrar",
+      "cat": "vurus",
+      "q": "Aynı oyuncu üst üste iki kez topa vurabilir mi?",
+      "a": "<p><strong>Hayır</strong> — bu çift vuruş hatasıdır. İki önemli istisna vardır:</p><ul><li><strong>Blok sonrası:</strong> Blokta topa dokunan oyuncu, takımın <strong>ilk vuruşunu</strong> kendisi yapabilir. Blok teması vuruş sayılmadığı için bu hata değildir.</li><li><strong>Takımın ilk vuruşu:</strong> Tek hareket içinde topun vücudun birden fazla bölümüne ardışık değmesi hata sayılmaz.</li></ul>",
+      "tags": ["çift vuruş", "blok sonrası", "istisna"]
+    },
+    {
+      "id": "kural-tavan",
+      "cat": "file",
+      "q": "Top tavana değerse ne olur?",
+      "a": "<p>FIVB kurallarına göre top <strong>tavana değdiği anda \"aut\"tur</strong> ve ralli biter — hangi tarafta olduğu fark etmez. Aynı şey saha dışındaki bir cisme veya oyun dışındaki bir kişiye temas için de geçerlidir.</p><div class=\"note\">\"Kendi tavanından seken top oynanabilir\" kuralı FIVB kuralı <strong>değildir</strong>; bazı ülkelerin salon ligleri ve okul federasyonları (örneğin ABD'de USAV/NFHS) alçak tavanlı salonlar için böyle bir yerel düzenleme uygular. Resmî maçta geçerli değildir.</div>",
+      "tags": ["tavan", "cisim", "aut", "hata"]
+    },
+    {
+      "id": "kural-hakemler",
+      "cat": "yonetim",
+      "q": "Sahada kaç hakem vardır?",
+      "a": "<ul><li><strong>1. hakem:</strong> direğin yanındaki platformda durur, maçı yönetir, son sözü söyler</li><li><strong>2. hakem:</strong> filenin karşı tarafında, <strong>sahanın dışında serbest bölgede</strong> direğin yanında görev yapar; orta çizgi, oyuncu değişimleri ve molalardan sorumludur</li><li><strong>Challenge (video) hakemi:</strong> video kontrol sisteminden sorumlu; artık hakem heyetinin daimî üyesidir</li><li><strong>Yedek hakem</strong></li><li><strong>Yazı hakemi</strong> (ve gerektiğinde yardımcı yazı hakemi): skoru, rotasyonu ve değişiklikleri kaydeder</li><li><strong>Çizgi hakemleri:</strong> 2 veya 4 kişi; topun in/out ve anten ihlallerini bayrakla işaret eder</li></ul>",
+      "tags": ["hakem", "yazı hakemi", "çizgi hakemi", "challenge hakemi"]
+    }
+  ]
+}
