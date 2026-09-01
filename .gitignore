@@ -11,3 +11,5 @@ node_modules/
 Thumbs.db
 desktop.ini
 .DS_Store
+# Yerel yardimci betikler (siteye yayinlanmasin)
+yayinla.ps1
