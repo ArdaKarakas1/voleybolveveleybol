@@ -24,6 +24,15 @@
   });
 
   /* ---------- Mobil menü ---------- */
+  /* Menü açıkken sayfa arkada kaymaz. Yumuşak kaydırma (Lenis) yüklüyse o da durdurulur.
+     Lenis yüklü değilse (telefon, dokunmatik ekran, yavaş bağlantı) bu işlev bir şey yapmaz. */
+  function kaydirmaKilidi(kilitli) {
+    var lenis = window.VVV && window.VVV.lenis;
+    if (!lenis) return;
+    if (kilitli) lenis.stop();
+    else lenis.start();
+  }
+
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('[data-menu-toggle]');
     var nav = document.getElementById('mobileNav');
@@ -32,11 +41,13 @@
       var open = nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
+      kaydirmaKilidi(open);
       return;
     }
     if (nav.classList.contains('open') && e.target.closest('#mobileNav a')) {
       nav.classList.remove('open');
       document.body.style.overflow = '';
+      kaydirmaKilidi(false);
       var t = document.querySelector('[data-menu-toggle]');
       if (t) t.setAttribute('aria-expanded', 'false');
     }

@@ -132,7 +132,7 @@
         '</div>' +
         '<a class="link-more" href="' + esc(data.channelUrl || 'https://www.youtube.com/@voleybolveveleybol') + '/videos" target="_blank" rel="noopener">Tümü →</a>' +
         '</div></div>' +
-        '<div class="rail' + (dikeyRaf ? ' rail-dikey' : '') + '" id="' + railId + '">' + items.map(function (v) { return card(v); }).join('') + '</div>' +
+        '<div class="rail' + (dikeyRaf ? ' rail-dikey' : '') + '" id="' + railId + '" data-lenis-prevent-horizontal>' + items.map(function (v) { return card(v); }).join('') + '</div>' +
         '</div></section>';
     });
     railsHost.innerHTML = html;
