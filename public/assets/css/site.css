@@ -352,6 +352,16 @@ p { margin: 0; }
 .vcard .play svg { width: 22px; height: 22px; margin-left: 3px; }
 .vcard.is-hero .play svg { width: 28px; height: 28px; }
 
+/* Shorts (dikey) kartı: kapak 9:16, dar kartta başlık küçük ve üç satır.
+   Rafta kartın yüksekliği sabittir, genişliği oranından çıkar. */
+.vcard.is-short { aspect-ratio: 9/16; }
+.vcard.is-short::after {
+  background: linear-gradient(180deg, rgba(11,20,40,0) 36%, rgba(11,20,40,.6) 66%, rgba(11,20,40,.94) 100%);
+}
+.vcard.is-short .body { padding: 12px 12px 13px; }
+.vcard.is-short .title { font-size: 14px; line-height: 1.2; -webkit-line-clamp: 3; overflow-wrap: anywhere; }
+.vcard.is-short .meta { font-size: 11.5px; margin-top: 5px; gap: 2px 8px; }
+
 /* yatay raf */
 .rail-wrap { position: relative; }
 .rail {
@@ -365,6 +375,12 @@ p { margin: 0; }
 }
 @media (min-width: 700px) { .rail { margin-inline: 0; padding-inline: 0; grid-auto-columns: clamp(280px, 24vw, 330px); } }
 .rail > * { scroll-snap-align: start; }
+/* Rafta en az bir Shorts varsa: bütün kartlar aynı yüksekliktedir, Shorts dar (9:16), uzun video geniş (16:9).
+   Shorts bilgisi yoksa raf yukarıdaki eski düzende kalır. */
+.rail.rail-dikey { --kart-h: 300px; display: flex; align-items: flex-start; scroll-padding-inline: var(--gutter); }
+@media (min-width: 700px) { .rail.rail-dikey { scroll-padding-inline: 0; } }
+@media (min-width: 900px) { .rail.rail-dikey { --kart-h: 340px; } }
+.rail-dikey > .vcard { flex: none; height: var(--kart-h); }
 .rail::-webkit-scrollbar { height: 8px; }
 .rail::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 99px; }
 .rail::-webkit-scrollbar-track { background: transparent; }
@@ -375,6 +391,37 @@ p { margin: 0; }
 }
 .rail .vcard .play svg { width: 15px; height: 15px; margin-left: 2px; }
 .rail .vcard:hover .play { transform: scale(1.1); }
+
+/* "Son içerik" dikey düzeni (listede en az bir Shorts varsa).
+   Telefonda yatay kaydırılır, geniş ekranda sütunlara oturur.
+   son-a: dört eşit kart. son-b: büyük ilk kart ve üç küçük kart. */
+.son-icerik {
+  --kart-h: 340px;
+  display: flex; align-items: flex-end; gap: 12px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+  padding-bottom: 10px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter);
+  scrollbar-width: thin;
+}
+.son-icerik > .vcard, .son-icerik > .skeleton { flex: none; height: var(--kart-h); scroll-snap-align: start; }
+.son-icerik > .skeleton { aspect-ratio: 9/16; }
+.son-b > .vcard.is-short:first-child { height: calc(var(--kart-h) * 1.24); }
+.son-icerik .vcard.is-short .title { font-size: 15px; }
+.son-icerik .vcard.is-hero.is-short .title { font-size: var(--step-1); }
+/* Telefonda uzun video kartı (16:9, sabit yükseklik) ekrandan geniştir.
+   Yazı bloğu ekran genişliğine sığar, kart ekranın soluna oturunca başlık tam görünür. */
+@media (max-width: 699px) {
+  .rail-dikey > .vcard:not(.is-short) .body,
+  .son-icerik > .vcard:not(.is-short) .body { max-width: calc(100vw - var(--gutter) * 2); }
+}
+@media (min-width: 700px) {
+  .son-icerik { display: grid; gap: 16px; align-items: end; overflow: visible; scroll-snap-type: none; margin-inline: 0; padding: 0; }
+  .son-a { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .son-b { grid-template-columns: 1.35fr repeat(3, minmax(0, 1fr)); }
+  .son-icerik > .vcard, .son-icerik > .skeleton, .son-b > .vcard.is-short:first-child { height: auto; }
+  .son-icerik > .vcard:not(.is-short) { grid-column: span 2; }
+  .son-icerik .vcard.is-short .title { font-size: clamp(13.5px, 1.1vw + 4px, 17px); }
+  .son-icerik .vcard.is-hero.is-short .title { font-size: var(--step-1); }
+}
 
 .rail-nav { display: flex; gap: 6px; }
 @media (max-width: 700px) { .rail-nav { display: none; } }
