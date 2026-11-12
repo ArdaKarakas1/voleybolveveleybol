@@ -50,6 +50,13 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Astro'nun derlediği betikler /_astro/ altına yazılır ve adlarında içerik özeti
+# (hash) taşır; içerik değişince ad değişir, bu yüzden bir yıl önbelleklenebilir.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [[headers]]
   for = "/data/*"
   [headers.values]

@@ -159,6 +159,9 @@
     var band = BANTLAR[0];
     for (var i = 0; i < BANTLAR.length; i++) if (puan / toplam >= BANTLAR[i].oran) band = BANTLAR[i];
     var R = 74, C = 2 * Math.PI * R;
+    var hedefOfset = C - C * puan / toplam;
+    /* Hareketi azaltma ayarı açıksa halka doğrudan son değerinde çizilir, geçiş oynamaz. */
+    var azHareket = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
     host.innerHTML =
       '<div class="center">' +
@@ -166,7 +169,7 @@
       '<svg width="168" height="168" viewBox="0 0 168 168" aria-hidden="true">' +
       '<circle cx="84" cy="84" r="' + R + '" fill="none" stroke="var(--surface-2)" stroke-width="13"/>' +
       '<circle cx="84" cy="84" r="' + R + '" fill="none" stroke="var(--accent)" stroke-width="13" stroke-linecap="round" ' +
-      'stroke-dasharray="' + C + '" stroke-dashoffset="' + (C - C * puan / toplam) + '" style="transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1)"/>' +
+      'stroke-dasharray="' + C + '" stroke-dashoffset="' + (azHareket ? hedefOfset : C) + '" style="transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1)"/>' +
       '</svg>' +
       '<div class="val"><b>' + puan + '/' + toplam + '</b><span>%' + pct + '</span></div>' +
       '</div>' +
@@ -181,6 +184,14 @@
       '<p class="text-dim" style="margin-top:22px;font-size:14px">Kuralları videoda da anlatıyorum — ' +
       '<a class="link-more" href="https://www.youtube.com/@voleybolveveleybol?sub_confirmation=1" target="_blank" rel="noopener">kanala abone ol →</a></p>' +
       '</div>';
+
+    /* Halka önce boş çizilir, bir sonraki karede hedef değere geçer; geçiş tanımı animasyonu oynatır.
+       Önce başlangıç değeri tarayıcıya işletilir, yoksa geçiş hiç başlamaz. */
+    var halka = host.querySelector('.score-ring circle:last-child');
+    if (halka && !azHareket) {
+      halka.getBoundingClientRect();
+      requestAnimationFrame(function () { halka.style.strokeDashoffset = String(hedefOfset); });
+    }
 
     document.getElementById('again').addEventListener('click', basla);
     document.getElementById('share').addEventListener('click', function () {

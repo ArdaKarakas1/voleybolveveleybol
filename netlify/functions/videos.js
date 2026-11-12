@@ -7,7 +7,9 @@
  *     bir video hangi listedeyse o kategoriye girer. (En doğru yöntem — YouTube'da
  *     oynatma listesi açman yeterli, site kendiliğinden günceller.)
  *  3. Oynatma listesi yoksa başlık/açıklama anahtar kelimelerine göre kategori atar.
- *  4. Sonucu 30 dk CDN'de önbelleğe alır; hata olursa son bilinen veriyi döner.
+ *  4. Her videoya short alanı ekler (true: Shorts, false: uzun video, null: bilinmiyor);
+ *     site bu alana göre dikey ya da yatay kart çizer. Ayrıntısı shortMi() içinde.
+ *  5. Sonucu 30 dk CDN'de önbelleğe alır; hata olursa son bilinen veriyi döner.
  *
  * Yeni kategori eklemek için: aşağıdaki CATEGORIES dizisine bir satır ekle,
  * istersen YouTube'da aynı isimle bir oynatma listesi aç ve id'sini playlists'e yaz.
@@ -82,6 +84,35 @@ async function getXml(url) {
   return res.text();
 }
 
+/** Akış girdisindeki <link rel="alternate" href="..."> adresi (öznitelik sırası fark etmez). */
+function altLink(block) {
+  const tags = block.match(/<link\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    if (!/\brel\s*=\s*["']alternate["']/i.test(tag)) continue;
+    const m = tag.match(/\bhref\s*=\s*["']([^"']+)["']/i);
+    if (m) return decode(m[1]);
+  }
+  return '';
+}
+
+/**
+ * Video dikey bir kısa video (Shorts) mu?
+ *   true  → Shorts, kart dikey çizilir
+ *   false → uzun video, kart yatay kalır
+ *   null  → bilinmiyor, kart eskisi gibi yatay kalır
+ *
+ * Birinci işaret YouTube'un kendi akışındaki bağlantıdır: Shorts için /shorts/<id>,
+ * uzun video için /watch?v=<id> gelir. Bu işaret akıştaki her videoyu sınıflar.
+ * (UUSH listesi yalnızca en yeni 15 Shorts'u döndürür, bu yüzden tek başına yetmez.)
+ * Bağlantı yoksa ya da tanınmıyorsa başlıktaki #shorts etiketine bakılır.
+ */
+function shortMi(link, title) {
+  if (/\/shorts\//i.test(link)) return true;
+  if (/\/watch\b/i.test(link)) return false;
+  if (/#shorts?\b/i.test(title)) return true;
+  return null;
+}
+
 function parseFeed(xml) {
   const out = [];
   const entries = xml.split('<entry>').slice(1);
@@ -89,15 +120,17 @@ function parseFeed(xml) {
     const block = raw.split('</entry>')[0];
     const id = pick(block, 'yt:videoId');
     if (!id) continue;
+    const title = pick(block, 'title');
     const thumbMatch = block.match(/<media:thumbnail[^>]*url="([^"]+)"/i);
     const viewsMatch = block.match(/<media:statistics[^>]*views="(\d+)"/i);
     out.push({
       id,
-      title: pick(block, 'title'),
+      title,
       published: pick(block, 'published'),
       description: pick(block, 'media:description').slice(0, 400),
       thumb: thumbMatch ? thumbMatch[1] : `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
-      views: viewsMatch ? Number(viewsMatch[1]) : null
+      views: viewsMatch ? Number(viewsMatch[1]) : null,
+      short: shortMi(altLink(block), title)
     });
   }
   return out;
@@ -157,7 +190,10 @@ exports.handler = async function () {
           if (existing === undefined || priorityOf(cat.id) < priorityOf(existing)) {
             catOf.set(item.id, cat.id);
           }
-          if (!byId.has(item.id)) { byId.set(item.id, item); }
+          // Aynı video birden çok akışta çıkabilir; ilk akış sınıflayamadıysa (null) sonrakinin cevabı alınır.
+          const kayitli = byId.get(item.id);
+          if (!kayitli) byId.set(item.id, item);
+          else if (kayitli.short == null && item.short != null) kayitli.short = item.short;
         });
         return pid;
       }));

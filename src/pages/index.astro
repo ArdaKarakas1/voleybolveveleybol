@@ -44,6 +44,7 @@ const jsonLd = `
   scripts={['/assets/js/home.js']}
   preconnect={['https://i.ytimg.com']}
   preload="/assets/img/logo-512.webp"
+  hareket
 >
   <script type="application/ld+json" slot="head" set:html={jsonLd} />
 
@@ -93,28 +94,28 @@ const jsonLd = `
         </div>
         <div class="counter-grid">
           <div class="counter is-total" role="group" aria-label="Toplam topluluk">
-            <div class="num" data-stat="total" data-fallback="5324">—</div>
+            <div class="num" data-stat="total" data-fallback="9707">—</div>
             <div class="lbl">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-1.8a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 20v-1.8a4 4 0 0 0-3-3.9"/><path d="M16 3.3a4 4 0 0 1 0 7.4"/></svg>
               Toplam topluluk
             </div>
           </div>
           <a class="counter" href="https://www.youtube.com/@voleybolveveleybol?sub_confirmation=1" target="_blank" rel="noopener">
-            <div class="num" data-stat="yt" data-fallback="2030">—</div>
+            <div class="num" data-stat="yt" data-fallback="2830">—</div>
             <div class="lbl">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 0 0 2-2C23 15.8 23 12 23 12ZM9.8 15.5v-7l6.1 3.5-6.1 3.5Z"/></svg>
               YouTube abonesi
             </div>
           </a>
           <a class="counter" href="https://www.instagram.com/voleybolveveleybol" target="_blank" rel="noopener">
-            <div class="num" data-stat="ig" data-fallback="2518">—</div>
+            <div class="num" data-stat="ig" data-fallback="5917">—</div>
             <div class="lbl">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
               Instagram takipçisi
             </div>
           </a>
           <a class="counter" href="https://www.tiktok.com/@voleybolveveleybol" target="_blank" rel="noopener">
-            <div class="num" data-stat="tt" data-fallback="776">—</div>
+            <div class="num" data-stat="tt" data-fallback="960">—</div>
             <div class="lbl">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.4 1.9 4 4.5 4.3v3c-1.7.1-3.2-.4-4.6-1.3v5.6c0 3.6-2.7 6.4-6.2 6.4S4 18.2 4 14.6c0-3.3 2.4-6 5.7-6.3v3.1a3.2 3.2 0 1 0 3 3.2V3h3.8Z"/></svg>
               TikTok takipçisi
@@ -136,9 +137,8 @@ const jsonLd = `
         </div>
         <a class="link-more" href="https://www.youtube.com/@voleybolveveleybol/videos" target="_blank" rel="noopener">Tüm videolar →</a>
       </div>
-      <div class="feature-grid" id="featured">
-        <div class="skeleton"></div>
-        <div class="feature-side"><div class="skeleton"></div><div class="skeleton"></div></div>
+      <div class="son-icerik son-a" id="featured" data-lenis-prevent-horizontal>
+        <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
       </div>
     </div>
   </section>

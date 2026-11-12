@@ -3,8 +3,10 @@
  *
  * YouTube  : YT_API_KEY varsa resmî API (kesin doğru), yoksa kanal sayfasından okur.
  * TikTok   : profil sayfasından okur (birden fazla desen denenir).
- * Instagram: Instagram otomatik okumayı engelliyor. IG_FOLLOWERS ortam değişkeni
- *            ile elle güncellenir; yoksa aşağıdaki FALLBACK kullanılır.
+ * Instagram: Instagram otomatik okumayı engelliyor. Okuma sırası:
+ *            1) canlı okuma, 2) "veri" dalındaki sayilar.json (elle güncellenir,
+ *            dosyayı değiştirmek canlı yayın BAŞLATMAZ), 3) IG_FOLLOWERS ortam
+ *            değişkeni (eski yöntem: her değişiklik yeni yayın ister), 4) FALLBACK.
  *
  * Her kaynak bağımsız çalışır: biri düşerse diğerleri canlı kalır, düşen kaynak
  * son bilinen değere döner ve _meta içinde "fallback" olarak işaretlenir.
@@ -13,14 +15,22 @@
 const HANDLE = 'voleybolveveleybol';
 const CHANNEL_ID = process.env.YT_CHANNEL_ID || 'UCLIkp2xtSnvDl4EftiZuGJA';
 
-/** Canlı okuma başarısız olursa gösterilecek son bilinen değerler (18 Ağu 2026). */
+/** Canlı okuma başarısız olursa gösterilecek son bilinen değerler (12 Kas 2026). */
 const FALLBACK = {
-  yt: Number(process.env.YT_FALLBACK || 2030),
+  yt: Number(process.env.YT_FALLBACK || 2830),
   ytVideos: Number(process.env.YT_VIDEOS_FALLBACK || 107),
   ytViews: Number(process.env.YT_VIEWS_FALLBACK || 0),
-  tt: Number(process.env.TT_FALLBACK || 776),
-  ig: Number(process.env.IG_FOLLOWERS || 2518)
+  tt: Number(process.env.TT_FALLBACK || 960),
+  ig: Number(process.env.IG_FOLLOWERS || 5917)
 };
+
+/**
+ * Instagram sayısının elle tutulduğu dosya. "veri" dalında durur; bu dal siteyi
+ * derlemez, bu yüzden dosyayı GitHub'da değiştirmek Netlify yayını başlatmaz.
+ * Biçim: { "ig": 5917, "guncelleme": "2026-11-12" }
+ */
+const SAYILAR_URL = process.env.SAYILAR_URL ||
+  'https://raw.githubusercontent.com/ArdaKarakas1/voleybolveveleybol/veri/sayilar.json';
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
 const TTL = 1000 * 60 * 15;
@@ -100,6 +110,15 @@ async function tiktok() {
   return n;
 }
 
+/** sayilar.json'dan Instagram sayısını okur. Geçersiz içerik hata sayılır. */
+async function instagramDosyadan() {
+  const j = JSON.parse(await getText(SAYILAR_URL, { accept: 'application/json' }));
+  const ham = j && j.ig;
+  const n = typeof ham === 'number' ? ham : (/^\d+$/.test(String(ham).trim()) ? Number(ham) : NaN);
+  if (!Number.isInteger(n) || n <= 0 || n >= 1e8) throw new Error('sayilar.json: ig geçersiz');
+  return { value: n, tarih: typeof j.guncelleme === 'string' ? j.guncelleme.slice(0, 10) : null };
+}
+
 async function instagram() {
   // 1) Resmî olmayan web profil API'si — Instagram'ın kendi web uygulamasının
   //    kullandığı uç nokta. x-ig-app-id başlığıyla çoğu sunucudan anonim çalışır.
@@ -132,9 +151,20 @@ async function instagram() {
     if (n) return { value: n, how: 'live' };
   } catch (e) { /* yedeğe düş */ }
 
-  // 3) Elle ayarlanan değer, o da yoksa son bilinen değer.
-  if (process.env.IG_FOLLOWERS) return { value: Number(process.env.IG_FOLLOWERS), how: 'manual' };
-  return { value: FALLBACK.ig, how: 'fallback' };
+  // 3) veri dalındaki sayilar.json. Site bunu "elle güncelleniyor" diye gösterir (how: 'manual').
+  //    Dosya okunamazsa nedeni /api/stats çıktısındaki _meta.igDosyaHatasi alanında görünür;
+  //    böylece "sayıyı değiştirdim ama site eski kaldı" durumu tahminsiz teşhis edilir.
+  let dosyaHatasi = null;
+  try {
+    const d = await instagramDosyadan();
+    return { value: d.value, how: 'manual', tarih: d.tarih };
+  } catch (e) { dosyaHatasi = String((e && e.message) || e).slice(0, 80); }
+
+  // 4) Eski yöntem: ortam değişkeni. Her değişiklik yeni yayın ister, bu yüzden son çare.
+  if (process.env.IG_FOLLOWERS) return { value: Number(process.env.IG_FOLLOWERS), how: 'manual', hata: dosyaHatasi };
+
+  // 5) Koddaki son bilinen değer.
+  return { value: FALLBACK.ig, how: 'fallback', hata: dosyaHatasi };
 }
 
 exports.handler = async function () {
@@ -172,7 +202,12 @@ exports.handler = async function () {
   if (ttRes.status === 'fulfilled' && ttRes.value) { out.tt = ttRes.value; out._meta.tt = 'live'; }
   else { out._meta.tt = 'fallback'; }
 
-  if (igRes.status === 'fulfilled') { out.ig = igRes.value.value; out._meta.ig = igRes.value.how; }
+  if (igRes.status === 'fulfilled') {
+    out.ig = igRes.value.value;
+    out._meta.ig = igRes.value.how;
+    if (igRes.value.tarih) out._meta.igTarih = igRes.value.tarih;
+    if (igRes.value.hata) out._meta.igDosyaHatasi = igRes.value.hata;
+  }
   else { out._meta.ig = 'fallback'; }
 
   out.total = (out.yt || 0) + (out.tt || 0) + (out.ig || 0);

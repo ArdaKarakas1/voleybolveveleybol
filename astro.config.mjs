@@ -16,5 +16,9 @@ export default defineConfig({
 
   compressHTML: true,
 
+  // Astro küçük betikleri HTML'in içine gömer, güvenlik başlığı (CSP) gömülü betiği engeller.
+  // Bu ayar her betiğin ayrı bir dosya olarak /_astro/ altına yazılmasını sağlar.
+  vite: { build: { assetsInlineLimit: 0 } },
+
   devToolbar: { enabled: false }
 });
