@@ -177,12 +177,22 @@
         '<p class="text-dim">Videolar şu anda yüklenemedi. ' +
         '<a class="link-more" href="https://www.youtube.com/@voleybolveveleybol" target="_blank" rel="noopener">YouTube kanalına git →</a></p></div>';
       railsHost.innerHTML = '';
+      icerikHazir(); // içerik gelmese de sayfa düzeni burada kesinleşir
       return;
     }
     renderFeatured(data.videos);
     renderRails(data);
     resimYedegiBagla(featured);
     resimYedegiBagla(railsHost);
+    icerikHazir();
+  }
+
+  /* Kartlar çizilince hareket katmanı haberdar edilir (src/scripts/hareket.js).
+     Katman bu olaydan sonra yüklenirse VVV.icerikHazir bayrağına bakar. */
+  function icerikHazir() {
+    window.VVV = window.VVV || {};
+    window.VVV.icerikHazir = true;
+    document.dispatchEvent(new CustomEvent('vvv:icerik'));
   }
 
   fetch('/api/videos')

@@ -250,6 +250,25 @@ p { margin: 0; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* Hero girişi: yalnız CSS, JS'e bağlı değil. Yalnız ana sayfadaki .hero içinde geçerlidir:
+   kurallar sözlüğü gibi başka sayfalarda .hero-lede sınıfı kullanılıyor ve o sayfalara hareket eklenmez.
+   Rozet ve düğmeler belirerek gelir.
+   Başlık, paragraf ve logo opaklığa girmez (ilk boyamada hemen görünürler, LCP öğeleridir): yalnız kayar ya da ölçeklenir.
+   "backwards": animasyon bitince öğe kendi stiline döner, düğmelerin hover hareketi bozulmaz.
+   Hepsi 600 ms'nin altında biter. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero .eyebrow, .hero .hero-cta .btn { animation: heroBelir .42s cubic-bezier(.2,.7,.2,1) backwards; }
+  .hero .hero-cta .btn:nth-child(1) { animation-delay: .08s; }
+  .hero .hero-cta .btn:nth-child(2) { animation-delay: .12s; }
+  .hero .hero-cta .btn:nth-child(3) { animation-delay: .16s; }
+  .hero h1 { animation: heroKay .5s cubic-bezier(.2,.7,.2,1) backwards; }
+  .hero .hero-lede { animation: heroKay .5s .05s cubic-bezier(.2,.7,.2,1) backwards; }
+  .hero .hero-figure img { animation: heroOlcek .55s cubic-bezier(.2,.7,.2,1) backwards; }
+}
+@keyframes heroBelir { from { opacity: 0; transform: translateY(10px); } }
+@keyframes heroKay { from { transform: translateY(16px); } }
+@keyframes heroOlcek { from { transform: scale(.93); } }
+
 /* ---------------- topluluk sayaç şeridi ---------------- */
 .counter-band {
   background: var(--navy); color: var(--cream); border-radius: var(--radius-xl);
@@ -570,6 +589,17 @@ mark { background: color-mix(in srgb, var(--orange) 35%, transparent); color: in
   background: var(--surface-2); border-left: 3px solid var(--orange); font-size: var(--step--1); color: var(--text-dim);
 }
 .quiz-explain b { color: var(--text); }
+
+/* Test geri bildirimi. quiz.js düz bir betiktir ve GSAP'ı içe alamaz, bu yüzden hareket CSS ile yazıldı.
+   Doğru şık hafifçe büyür, yanlış şık yatay sarsılır, açıklama kutusu açılarak gelir. */
+@media (prefers-reduced-motion: no-preference) {
+  .quiz-opt.correct { transform: scale(1.015); animation: sikDogru .42s cubic-bezier(.2,.7,.2,1) backwards; }
+  .quiz-opt.wrong { animation: sikYanlis .45s ease-in-out backwards; }
+  .quiz-explain { animation: aciklamaAc .4s cubic-bezier(.2,.7,.2,1) backwards; }
+}
+@keyframes sikDogru { 0% { transform: scale(1); } 55% { transform: scale(1.035); } 100% { transform: scale(1.015); } }
+@keyframes sikYanlis { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-7px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(2px); } }
+@keyframes aciklamaAc { from { opacity: 0; transform: translateY(-8px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0 0 0 0); } }
 .quiz-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; flex-wrap: wrap; }
 
 .score-ring { width: 168px; height: 168px; margin: 0 auto 20px; position: relative; }
@@ -693,7 +723,7 @@ mark { background: color-mix(in srgb, var(--orange) 35%, transparent); color: in
 .set-basla { color: var(--accent); font-weight: 700; }
 
 /* Sayfalar arası yumuşak geçiş (destekleyen tarayıcılarda) */
-@media not (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
 }
 

@@ -19,7 +19,8 @@ const {
   scripts = [],
   preconnect = [],
   preload,
-  chrome = true
+  chrome = true,
+  hareket = false
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://voleybolveveleybol.com');
@@ -72,7 +73,7 @@ const v = (yol) => `${yol}?v=${SURUM}`;
 
 <slot name="head" />
 </head>
-<body class="court-bg">
+<body class="court-bg" data-hareket={hareket ? '' : undefined}>
 <a class="skip" href="#main">İçeriğe geç</a>
 
 {chrome && <SiteHeader active={active} />}
@@ -83,5 +84,7 @@ const v = (yol) => `${yol}?v=${SURUM}`;
 
 <script src={v('/assets/js/site.js')} defer></script>
 {scripts.map((src) => <script src={v(src)} defer></script>)}
+<!-- Hareket katmanı: Astro derler, /_astro/ altına adında özet (hash) taşıyan ayrı dosyalar yazar. -->
+<script>import '../scripts/hareket-yukle.js';</script>
 </body>
 </html>
